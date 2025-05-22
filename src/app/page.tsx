@@ -51,6 +51,12 @@ export default function Home() {
           <span className="font-semibold">Zero tax. Fair launch. Big vision.</span>
         </p>
         <div className="flex flex-wrap gap-2 justify-center mt-4">
+          <a
+            href="/whitepaper"
+            className="rounded-full bg-[#FFD600] hover:bg-[#bfa600] transition-colors text-black font-semibold py-2 px-6 text-sm shadow-lg border border-[#FFD600] mb-2"
+          >
+            📄 Read the Whitepaper
+          </a>
           <span className="bg-[#9945FF] bg-opacity-30 rounded px-3 py-1 text-xs font-mono">#Solana</span>
           <span className="bg-[#19FB9B] bg-opacity-30 rounded px-3 py-1 text-xs font-mono">#ANTCO</span>
           <span className="bg-[#FFD600] bg-opacity-30 rounded px-3 py-1 text-xs font-mono">#Crypto</span>
