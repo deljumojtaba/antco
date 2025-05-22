@@ -1,0 +1,20 @@
+version: "3.8"
+services:
+  nextjs:
+    build: .
+    container_name: antcoders-nextjs
+    restart: always
+    environment:
+      - NODE_ENV=production
+    ports:
+      - "3000:3000"
+  nginx:
+    image: nginx:alpine
+    container_name: antcoders-nginx
+    restart: always
+    depends_on:
+      - nextjs
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
