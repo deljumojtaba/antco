@@ -1,156 +1,276 @@
-import React from "react";
+"use client";
 
-export const metadata = {
-  title: "ANTCO Whitepaper | ANTCO TOKEN",
-  description: "The official whitepaper for ANTCO, the community-driven Solana token for developers.",
-};
+import React, { useState } from "react";
+import {
+  useMediaQuery,
+  Box,
+  Typography,
+  Table,
+  TableBody,
+  TableCell,
+  TableContainer,
+  TableHead,
+  TableRow,
+  Paper,
+  Card,
+  CardContent,
+} from "@mui/material";
+
+function CopyableText({ text }: { text: string }) {
+  const [copied, setCopied] = useState(false);
+
+  const handleCopy = () => {
+    navigator.clipboard.writeText(text);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+
+  return (
+    <span className="bg-gray-800 px-2 py-1 rounded text-sm cursor-pointer" onClick={handleCopy}>
+      {text} {copied && <span className="text-green-500">(Copied!)</span>}
+    </span>
+  );
+}
 
 export default function WhitepaperPage() {
+  const isMobile = useMediaQuery("(max-width:920px)");
+
   return (
-    <main className="min-h-screen bg-gradient-to-br from-[#0a0a23] via-[#181830] to-[#1a1a40] text-white p-4 sm:p-8 flex flex-col items-center">
-      <div className="max-w-2xl w-full bg-white/10 border border-gray-700 rounded-2xl shadow-lg p-6 sm:p-10 mt-10 mb-10">
-        <h1 className="text-3xl sm:text-4xl font-extrabold text-[#FFD600] mb-6 text-center drop-shadow-lg">ANTCO Whitepaper</h1>
-        <section className="prose prose-invert max-w-none text-white">
-          <h2 className="text-2xl sm:text-3xl font-extrabold text-[#FFD600] mt-10 mb-4 text-center drop-shadow-lg">
-            ANTCO Tokenomics: Distribution and Allocation
-          </h2>
-          <p>
-            The ANTCO token has a carefully planned distribution to ensure the project’s growth, community engagement, and long-term sustainability.
-            Below is the detailed breakdown of the total supply and its allocation:
-          </p>
-          <ul>
-            <li>
-              <b>Total Supply:</b> 7,770,000,000 ANTCO tokens
-            </li>
-            <li>
-              <b>Airdrop Allocation:</b> 770,000,000 ANTCO tokens (approximately 9.91% of the total supply)
-              <br />
-              This portion is dedicated to an airdrop campaign aimed at rewarding early supporters, particularly developers and tech enthusiasts, to
-              foster community growth and adoption. The airdrop will incentivize active participation and help distribute tokens widely within the
-              Solana ecosystem.
-            </li>
-            <li>
-              <b>Team Reserve:</b> 1,000,000,000 ANTCO tokens (approximately 12.87% of the total supply)
-              <br />
-              This allocation is reserved for the development team to strengthen the project. These funds will support ongoing development,
-              partnerships, marketing efforts, and other initiatives to enhance ANTCO’s infrastructure and ensure its success as a developer-focused
-              platform in Web3.
-            </li>
-            <li>
-              <b>Liquidity Pool Injection:</b> 6,000,000,000 ANTCO tokens (approximately 77.22% of the total supply)
-              <br />
-              The remaining tokens will be injected into liquidity pools on decentralized exchanges (DEXs) like Raydium to ensure sufficient liquidity
-              for trading. This large allocation aims to facilitate smooth transactions, reduce slippage, and attract traders, thereby increasing the
-              token’s trading volume and accessibility. For example, the official Raydium pool (address:{" "}
-              <span className="break-all">B2bXGFaHDTuv7HCNEaHywuFRvVx6vkSfKEVk4k34VWkH</span>) has already been seeded with liquidity to support early
-              trading.
-            </li>
-          </ul>
-          <p>
-            We’re thrilled to introduce <b>ANTCO</b>, the first community-driven token on Solana designed specifically for developers and tech
-            enthusiasts like you! Whether you’re a coder, a blockchain builder, or just passionate about Web3 innovation, ANTCO is here to empower you
-            to support, collaborate, and grow within the Solana ecosystem. Here’s why you should check it out:
-          </p>
-          <h2>What is ANTCO?</h2>
-          <p>
-            ANTCO is more than just a token—it’s a movement to unite developers globally. Built on Solana, ANTCO offers a zero-tax, fair-launch model
-            with a big vision to foster collaboration and innovation in Web3 development. We aim to create a transparent ecosystem where devs can
-            support each other through donations, shared projects, and community-driven initiatives. Our token is live and trading on Raydium, and
-            we’d love for you to join us!
-          </p>
-          <h3>Key Details</h3>
-          <ul>
-            <li>
-              <b>Token Name:</b> AntCoders Token
-            </li>
-            <li>
-              <b>Symbol:</b> ANTCO
-            </li>
-            <li>
-              <b>Contract Address:</b> CV9oNz7rjTqCsWHHgqWhoZaaw1LSX96H81Vk5p94Hc2E
-            </li>
-            <li>
-              <b>Decimals:</b> 7
-            </li>
-            <li>
-              <b>Network:</b> Solana
-            </li>
-            <li>
-              <b>Raydium Pool:</b>{" "}
-              <a
-                href="https://raydium.io/swap/?inputCurrency=sol&outputCurrency=CV9oNz7rjTqCsWHHgqWhoZaaw1LSX96H81Vk5p94Hc2E"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-[#19FB9B] underline"
-              >
-                Swap ANTCO Here
-              </a>
-            </li>
-            <li>
-              <b>Website:</b>{" "}
-              <a href="https://antcoders.dev" target="_blank" rel="noopener noreferrer" className="text-[#FFD600] underline">
-                antcoders.dev
-              </a>
-            </li>
-          </ul>
-          <h3>Why Join ANTCO?</h3>
-          <ul>
-            <li>
-              <b>For Devs, By Devs:</b> ANTCO is built to support the developer community with resources, collaboration opportunities, and a platform
-              to showcase your projects.
-            </li>
-            <li>
-              <b>Zero Tax:</b> No hidden fees—every transaction is fair and transparent.
-            </li>
-            <li>
-              <b>Fair Launch:</b> No pre-sales or insider deals, just a community-first approach.
-            </li>
-            <li>
-              <b>Web3 Focus:</b> We’re passionate about empowering the next generation of blockchain developers to build on Solana.
-            </li>
-          </ul>
-          <h3>How to Get ANTCO</h3>
-          <ol>
-            <li>
-              Set up a Phantom wallet (
-              <a href="https://phantom.app" target="_blank" rel="noopener noreferrer" className="text-[#19FB9B] underline">
-                phantom.app
-              </a>
-              ).
-            </li>
-            <li>Buy SOL on an exchange (e.g., Coinbase, KuCoin) and transfer it to your wallet.</li>
-            <li>Visit Raydium, connect your wallet, and swap SOL for ANTCO using the pool link above.</li>
-            <li>If ANTCO doesn’t show in your wallet, add it manually with the contract address (listed above).</li>
-          </ol>
-          <h3>Get Involved!</h3>
-          <ul>
-            <li>
-              <b>Trade ANTCO:</b> Help boost our trading volume by swapping on Raydium.
-            </li>
-            <li>
-              <b>Add Liquidity:</b> Support the ecosystem and earn fees by adding liquidity to our pool.
-            </li>
-            <li>
-              <b>Join the Community:</b> Follow us on{" "}
-              <a href="https://x.com/AntCodersToken" target="_blank" rel="noopener noreferrer" className="text-[#FFD600] underline">
-                Twitter
-              </a>
-              , join our{" "}
-              <a href="https://t.me/antcoderstoken" target="_blank" rel="noopener noreferrer" className="text-[#19FB9B] underline">
-                Telegram
-              </a>
-              , or visit our site for updates on airdrops and dev-focused events.
-            </li>
-          </ul>
-          <p>Let’s build the future of Web3 together! What do you think, r/Solana? Any devs here want to collaborate or share ideas? 🚀</p>
-          <div className="mt-4 flex flex-wrap gap-2">
-            <span className="bg-[#9945FF] bg-opacity-30 rounded px-3 py-1 text-xs font-mono">#Solana</span>
-            <span className="bg-[#19FB9B] bg-opacity-30 rounded px-3 py-1 text-xs font-mono">#ANTCO</span>
-            <span className="bg-[#FFD600] bg-opacity-30 rounded px-3 py-1 text-xs font-mono">#Web3</span>
-            <span className="bg-[#00B4FC] bg-opacity-30 rounded px-3 py-1 text-xs font-mono">#Developers</span>
-          </div>
-        </section>
-      </div>
-    </main>
+    <Box
+      sx={{
+        minHeight: "100vh",
+        background: "linear-gradient(to bottom right, #0a0a23, #181830, #1a1a40)",
+        color: "white",
+        p: { xs: 2, sm: 3, md: 4 },
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+      }}
+    >
+      <Box
+        sx={{
+          maxWidth: "1200px",
+          width: "100%",
+          background: "rgba(255, 255, 255, 0.1)",
+          border: "1px solid #4a4a4a",
+          borderRadius: 2,
+          boxShadow: 3,
+          p: { xs: 3, sm: 4, md: 5 },
+          mt: { xs: 3, sm: 4, md: 5 },
+          mb: { xs: 3, sm: 4, md: 5 },
+        }}
+      >
+        <Typography
+          variant="h4"
+          component="h1"
+          align="center"
+          sx={{
+            fontWeight: "bold",
+            color: "#FFD600",
+            mb: { xs: 2, sm: 3, md: 4 },
+            textShadow: "0px 0px 10px rgba(255, 214, 0, 0.8)",
+          }}
+        >
+          ANTCO Whitepaper
+        </Typography>
+        <Typography
+          variant="h5"
+          component="h2"
+          align="center"
+          sx={{
+            fontWeight: "bold",
+            color: "#FFD600",
+            mt: { xs: 3, sm: 4, md: 5 },
+            mb: { xs: 2, sm: 3, md: 4 },
+            textShadow: "0px 0px 10px rgba(255, 214, 0, 0.8)",
+          }}
+        >
+          🔢 ANTCO Tokenomics: Distribution and Allocation
+        </Typography>
+        <Typography variant="body1" align="center" sx={{ mb: { xs: 2, sm: 3, md: 4 } }}>
+          The ANTCO token features a strategically balanced distribution model designed to foster sustainable growth, empower the developer community,
+          and support long-term project scalability. Below is the breakdown of the total supply and its respective allocation:
+        </Typography>
+        <Typography variant="h6" align="center" sx={{ fontWeight: "bold", mt: { xs: 2, sm: 3, md: 4 }, mb: { xs: 2, sm: 3, md: 4 } }}>
+          Total Supply: 7,770,000,000 ANTCO
+        </Typography>
+        {isMobile ? (
+          <Box sx={{ display: "grid", gap: 2 }}>
+            {/* Card layout for mobile */}
+            <Card sx={{ background: "#1a1a40", border: "1px solid #4a4a4a" }}>
+              <CardContent sx={{ color: "white" }}>
+                <Typography variant="h6" sx={{ color: "#FFD600", mb: 1 }}>
+                  Development Team
+                </Typography>
+                <Typography variant="body2" sx={{ mb: 1, color: "white" }}>
+                  <b>Percentage:</b> 10%
+                </Typography>
+                <Typography variant="body2" sx={{ mb: 1, color: "white" }}>
+                  <b>Tokens:</b> 777,000,000 ANTCO
+                </Typography>
+                <Typography variant="body2" sx={{ color: "white" }}>
+                  Reserved for the core team and long-term contributors, supporting ongoing development, maintenance, and ecosystem growth. Tokens are
+                  subject to a vesting schedule.
+                </Typography>
+              </CardContent>
+            </Card>
+            <Card sx={{ background: "#1a1a40", border: "1px solid #4a4a4a" }}>
+              <CardContent sx={{ color: "white" }}>
+                <Typography variant="h6" sx={{ color: "#FFD600", mb: 1 }}>
+                  Marketing & Listings
+                </Typography>
+                <Typography variant="body2" sx={{ mb: 1, color: "white" }}>
+                  <b>Percentage:</b> 5%
+                </Typography>
+                <Typography variant="body2" sx={{ mb: 1, color: "white" }}>
+                  <b>Tokens:</b> 388,500,000 ANTCO
+                </Typography>
+                <Typography variant="body2" sx={{ color: "white" }}>
+                  Allocated for marketing campaigns, exchange listing fees, influencer partnerships, and community outreach to boost awareness
+                  globally.
+                </Typography>
+              </CardContent>
+            </Card>
+            <Card sx={{ background: "#1a1a40", border: "1px solid #4a4a4a" }}>
+              <CardContent sx={{ color: "white" }}>
+                <Typography variant="h6" sx={{ color: "#FFD600", mb: 1 }}>
+                  Project Treasury
+                </Typography>
+                <Typography variant="body2" sx={{ mb: 1, color: "white" }}>
+                  <b>Percentage:</b> 5%
+                </Typography>
+                <Typography variant="body2" sx={{ mb: 1, color: "white" }}>
+                  <b>Tokens:</b> 388,500,000 ANTCO
+                </Typography>
+                <Typography variant="body2" sx={{ color: "white" }}>
+                  Funds future ecosystem development, including dApps under the AntCoders brand, ensuring financial flexibility and rapid execution of
+                  ideas.
+                </Typography>
+              </CardContent>
+            </Card>
+            <Card sx={{ background: "#1a1a40", border: "1px solid #4a4a4a" }}>
+              <CardContent sx={{ color: "white" }}>
+                <Typography variant="h6" sx={{ color: "#FFD600", mb: 1 }}>
+                  Initial Liquidity Pool
+                </Typography>
+                <Typography variant="body2" sx={{ mb: 1, color: "white" }}>
+                  <b>Percentage:</b> 55%
+                </Typography>
+                <Typography variant="body2" sx={{ mb: 1, color: "white" }}>
+                  <b>Tokens:</b> 4,273,500,000 ANTCO
+                </Typography>
+                <Typography variant="body2" sx={{ color: "white" }}>
+                  Locked in decentralized liquidity pools like Raydium to enable smooth, low-slippage trading. A portion has been burned to enhance
+                  liquidity stability. Pool Address: <CopyableText text="GpMZbSM2GgvTKHJirzeGfMFoaZ8UR2X7F4v8vHTvxFbL" />
+                </Typography>
+              </CardContent>
+            </Card>
+            <Card sx={{ background: "#1a1a40", border: "1px solid #4a4a4a" }}>
+              <CardContent sx={{ color: "white" }}>
+                <Typography variant="h6" sx={{ color: "#FFD600", mb: 1 }}>
+                  Community & Airdrops
+                </Typography>
+                <Typography variant="body2" sx={{ mb: 1, color: "white" }}>
+                  <b>Percentage:</b> 15%
+                </Typography>
+                <Typography variant="body2" sx={{ mb: 1, color: "white" }}>
+                  <b>Tokens:</b> 1,165,500,000 ANTCO
+                </Typography>
+                <Typography variant="body2" sx={{ color: "white" }}>
+                  Rewards early supporters, developers, and engaged users through airdrops, contests, and ambassador programs to foster organic
+                  adoption.
+                </Typography>
+              </CardContent>
+            </Card>
+            <Card sx={{ background: "#1a1a40", border: "1px solid #4a4a4a" }}>
+              <CardContent sx={{ color: "white" }}>
+                <Typography variant="h6" sx={{ color: "#FFD600", mb: 1 }}>
+                  Strategic Reserve
+                </Typography>
+                <Typography variant="body2" sx={{ mb: 1, color: "white" }}>
+                  <b>Percentage:</b> 10%
+                </Typography>
+                <Typography variant="body2" sx={{ mb: 1, color: "white" }}>
+                  <b>Tokens:</b> 777,000,000 ANTCO
+                </Typography>
+                <Typography variant="body2" sx={{ color: "white" }}>
+                  Held for future collaborations, partnerships, and potential fundraising opportunities, enabling onboarding of strategic allies and
+                  institutional supporters.
+                </Typography>
+              </CardContent>
+            </Card>
+          </Box>
+        ) : (
+          <TableContainer component={Paper} sx={{ background: "#1a1a40" }}>
+            <Table>
+              <TableHead>
+                <TableRow>
+                  <TableCell sx={{ color: "#FFD600", fontWeight: "bold" }}>Category</TableCell>
+                  <TableCell sx={{ color: "#FFD600", fontWeight: "bold" }}>Percentage</TableCell>
+                  <TableCell sx={{ color: "#FFD600", fontWeight: "bold" }}>Tokens</TableCell>
+                  <TableCell sx={{ color: "#FFD600", fontWeight: "bold" }}>Description</TableCell>
+                </TableRow>
+              </TableHead>
+              <TableBody>
+                <TableRow sx={{ color: "white" }}>
+                  <TableCell sx={{ color: "white" }}>Development Team</TableCell>
+                  <TableCell sx={{ color: "white" }}>10%</TableCell>
+                  <TableCell sx={{ color: "white" }}>777,000,000 ANTCO</TableCell>
+                  <TableCell sx={{ color: "white" }}>
+                    Reserved for the core team and long-term contributors, supporting ongoing development, maintenance, and ecosystem growth. Tokens
+                    are subject to a vesting schedule.
+                  </TableCell>
+                </TableRow>
+                <TableRow sx={{ color: "white" }}>
+                  <TableCell sx={{ color: "white" }}>Marketing & Listings</TableCell>
+                  <TableCell sx={{ color: "white" }}>5%</TableCell>
+                  <TableCell sx={{ color: "white" }}>388,500,000 ANTCO</TableCell>
+                  <TableCell sx={{ color: "white" }}>
+                    Allocated for marketing campaigns, exchange listing fees, influencer partnerships, and community outreach to boost awareness
+                    globally.
+                  </TableCell>
+                </TableRow>
+                <TableRow sx={{ color: "white" }}>
+                  <TableCell sx={{ color: "white" }}>Project Treasury</TableCell>
+                  <TableCell sx={{ color: "white" }}>5%</TableCell>
+                  <TableCell sx={{ color: "white" }}>388,500,000 ANTCO</TableCell>
+                  <TableCell sx={{ color: "white" }}>
+                    Funds future ecosystem development, including dApps under the AntCoders brand, ensuring financial flexibility and rapid execution
+                    of ideas.
+                  </TableCell>
+                </TableRow>
+                <TableRow sx={{ color: "white" }}>
+                  <TableCell sx={{ color: "white" }}>Initial Liquidity Pool</TableCell>
+                  <TableCell sx={{ color: "white" }}>55%</TableCell>
+                  <TableCell sx={{ color: "white" }}>4,273,500,000 ANTCO</TableCell>
+                  <TableCell sx={{ color: "white" }}>
+                    Locked in decentralized liquidity pools like Raydium to enable smooth, low-slippage trading. A portion has been burned to enhance
+                    liquidity stability. Pool Address: <CopyableText text="GpMZbSM2GgvTKHJirzeGfMFoaZ8UR2X7F4v8vHTvxFbL" />
+                  </TableCell>
+                </TableRow>
+                <TableRow sx={{ color: "white" }}>
+                  <TableCell sx={{ color: "white" }}>Community & Airdrops</TableCell>
+                  <TableCell sx={{ color: "white" }}>15%</TableCell>
+                  <TableCell sx={{ color: "white" }}>1,165,500,000 ANTCO</TableCell>
+                  <TableCell sx={{ color: "white" }}>
+                    Rewards early supporters, developers, and engaged users through airdrops, contests, and ambassador programs to foster organic
+                    adoption.
+                  </TableCell>
+                </TableRow>
+                <TableRow sx={{ color: "white" }}>
+                  <TableCell sx={{ color: "white" }}>Strategic Reserve</TableCell>
+                  <TableCell sx={{ color: "white" }}>10%</TableCell>
+                  <TableCell sx={{ color: "white" }}>777,000,000 ANTCO</TableCell>
+                  <TableCell sx={{ color: "white" }}>
+                    Held for future collaborations, partnerships, and potential fundraising opportunities, enabling onboarding of strategic allies and
+                    institutional supporters.
+                  </TableCell>
+                </TableRow>
+              </TableBody>
+            </Table>
+          </TableContainer>
+        )}
+      </Box>
+    </Box>
   );
 }
