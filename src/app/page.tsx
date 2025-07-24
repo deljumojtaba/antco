@@ -7,9 +7,17 @@ type TokenMeta = {
   symbol?: string;
   name?: string;
   supply?: string | number;
+  circSupply?: string | number;
+  decimals?: number;
+  holderCount?: number;
+  website?: string;
+  icon?: string;
 };
 type TokenPrice = {
   priceUsdt?: string | number;
+  fdv?: string | number;
+  mcap?: string | number;
+  liquidity?: string | number;
 };
 type TokenData = {
   meta?: TokenMeta;
@@ -79,7 +87,7 @@ export default function Home() {
             Trade on DEX
           </a>
           <a
-            href="https://jup.ag/swap/SOL-CV9oNz7rjTqCsWHHgqWhoZaaw1LSX96H81Vk5p94Hc2E"
+            href="https://jup.ag/tokens/CV9oNz7rjTqCsWHHgqWhoZaaw1LSX96H81Vk5p94Hc2E"
             target="_blank"
             rel="noopener noreferrer"
             className="flex-1 rounded-lg bg-gradient-to-r from-[#4CAF50] to-[#388E3C] hover:from-[#388E3C] hover:to-[#4CAF50] transition-all text-white font-semibold py-4 px-6 text-center shadow-lg flex items-center justify-center gap-2 transform hover:scale-105"
@@ -104,15 +112,51 @@ export default function Home() {
               <span className="text-gray-400 text-sm">Loading token data...</span>
             ) : tokenData && !tokenData.error ? (
               <>
-                <div className="flex flex-col gap-1 items-center">
-                  <span className="text-base font-semibold">Symbol: {tokenData.meta?.symbol || "N/A"}</span>
-                  <span className="text-base font-semibold">Name: {tokenData.meta?.name || "N/A"}</span>
-                  <span className="text-base font-semibold">
-                    Supply: {tokenData.meta?.supply ? Number(tokenData.meta.supply).toLocaleString() : "N/A"}
-                  </span>
-                  <span className="text-base text-[#19FB9B] font-semibold">
-                    Price: {tokenData.price?.priceUsdt ? `$${Number(tokenData.price.priceUsdt).toFixed(6)}` : "N/A"} USDT
-                  </span>
+                <div className="flex flex-col gap-2 items-center w-full">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full text-center">
+                    <div className="bg-gray-800/50 rounded-lg p-3">
+                      <span className="text-sm text-gray-400">Symbol</span>
+                      <p className="text-base font-semibold text-white">{tokenData.meta?.symbol || "N/A"}</p>
+                    </div>
+                    <div className="bg-gray-800/50 rounded-lg p-3">
+                      <span className="text-sm text-gray-400">Name</span>
+                      <p className="text-base font-semibold text-white">{tokenData.meta?.name || "N/A"}</p>
+                    </div>
+                    <div className="bg-gray-800/50 rounded-lg p-3">
+                      <span className="text-sm text-gray-400">Total Supply</span>
+                      <p className="text-base font-semibold text-white">
+                        {tokenData.meta?.supply ? Number(tokenData.meta.supply).toLocaleString() : "N/A"}
+                      </p>
+                    </div>
+                    <div className="bg-gray-800/50 rounded-lg p-3">
+                      <span className="text-sm text-gray-400">Holders</span>
+                      <p className="text-base font-semibold text-white">{tokenData.meta?.holderCount || "N/A"}</p>
+                    </div>
+                    <div className="bg-gray-800/50 rounded-lg p-3">
+                      <span className="text-sm text-gray-400">Price</span>
+                      <p className="text-base font-semibold text-[#19FB9B]">
+                        {tokenData.price?.priceUsdt ? `$${Number(tokenData.price.priceUsdt).toFixed(8)}` : "N/A"}
+                      </p>
+                    </div>
+                    <div className="bg-gray-800/50 rounded-lg p-3">
+                      <span className="text-sm text-gray-400">Market Cap</span>
+                      <p className="text-base font-semibold text-[#19FB9B]">
+                        {tokenData.price?.mcap ? `$${Number(tokenData.price.mcap).toLocaleString()}` : "N/A"}
+                      </p>
+                    </div>
+                    <div className="bg-gray-800/50 rounded-lg p-3">
+                      <span className="text-sm text-gray-400">FDV</span>
+                      <p className="text-base font-semibold text-white">
+                        {tokenData.price?.fdv ? `$${Number(tokenData.price.fdv).toLocaleString()}` : "N/A"}
+                      </p>
+                    </div>
+                    <div className="bg-gray-800/50 rounded-lg p-3">
+                      <span className="text-sm text-gray-400">Liquidity</span>
+                      <p className="text-base font-semibold text-white">
+                        {tokenData.price?.liquidity ? `$${Number(tokenData.price.liquidity).toLocaleString()}` : "N/A"}
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </>
             ) : (
@@ -136,7 +180,7 @@ export default function Home() {
               Your contribution helps strengthen the community and trading experience for everyone.
             </p>
             <a
-              href="https://raydium.io/liquidity/increase/?mode=add&pool_id=B2bXGFaHDTuv7HCNEaHywuFRvVx6vkSfKEVk4k34VWkH"
+              href="https://raydium.io/liquidity-pools/?token=CV9oNz7rjTqCsWHHgqWhoZaaw1LSX96H81Vk5p94Hc2E&tab=standard"
               target="_blank"
               rel="noopener noreferrer"
               className="mt-2 inline-block rounded-full bg-[#19FB9B] hover:bg-[#13a87a] transition-colors text-black font-bold py-3 px-8 text-center shadow-lg text-lg"
