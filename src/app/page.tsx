@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import { ArrowRight, TrendingUp, Users, Shield, Zap, RefreshCw } from "lucide-react";
 
 type TokenMeta = {
   symbol?: string;
@@ -28,6 +29,7 @@ type TokenData = {
 export default function Home() {
   const [tokenData, setTokenData] = useState<TokenData | null>(null);
   const [loading, setLoading] = useState(true);
+
   useEffect(() => {
     fetch("/api/token-info")
       .then((res) => res.json())
@@ -39,184 +41,260 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-between bg-gradient-to-br from-[#0a0a23] via-[#181830] to-[#1a1a40] text-white p-4 sm:p-8">
-      <main className="flex-1 flex flex-col items-center justify-center w-full max-w-2xl mx-auto py-12 gap-10">
-        <Image
-          src="https://azure-elaborate-narwhal-225.mypinata.cloud/ipfs/bafybeicmbo2og3lhzato76argy5m4t4asolc2rbj2nsvpercejurnezosy"
-          alt="ANTCO Logo"
-          width={110}
-          height={110}
-          className="mb-2 rounded-full bg-white p-2 shadow-lg"
-          priority
-          unoptimized
-        />
-        <h1 className="text-4xl sm:text-5xl font-extrabold text-[#FFD600] tracking-tight drop-shadow-lg mt-2">AntCoders</h1>
-        <p className="text-lg sm:text-xl mt-2 max-w-xl text-center font-medium">
-          🚀 Introducing <span className="font-semibold">ANTCO</span> – The first community-driven token on Solana for developers!
-          <br />
-          Support, donate, and grow with us as we empower devs worldwide.
-          <br />
-          <span className="font-semibold">Zero tax. Fair launch. Big vision.</span>
-        </p>
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-blue-50 dark:from-gray-900 dark:via-gray-900 dark:to-blue-950 transition-colors duration-300">
+      {/* Hero Section */}
+      <section className="relative px-4 pt-20 pb-16 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center">
+            <div className="flex justify-center mb-8">
+              <div className="relative">
+                <Image
+                  src="https://azure-elaborate-narwhal-225.mypinata.cloud/ipfs/bafybeicmbo2og3lhzato76argy5m4t4asolc2rbj2nsvpercejurnezosy"
+                  alt="ANTCO Logo"
+                  width={120}
+                  height={120}
+                  className="rounded-full bg-white dark:bg-gray-800 p-3 shadow-2xl animate-float ring-4 ring-orange-500/20"
+                  priority
+                  unoptimized
+                />
+                <div className="absolute -inset-1 rounded-full bg-gradient-to-r from-orange-500 to-blue-500 opacity-75 blur animate-glow"></div>
+              </div>
+            </div>
 
-        <div className="flex flex-col sm:flex-row gap-4 w-full justify-center mt-6">
-          <a
-            href="https://t.me/antcoderstoken"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex-1 rounded-lg bg-gradient-to-r from-[#229ED9] to-[#176ca1] hover:from-[#176ca1] hover:to-[#229ED9] transition-all text-white font-semibold py-4 px-6 text-center shadow-lg flex items-center justify-center gap-2 transform hover:scale-105"
-          >
-            <Image src="/telegram.svg" alt="Telegram" width={20} height={20} className="w-5 h-5 inline-block" />
-            Join Telegram
-          </a>
-          <a
-            href="https://x.com/AntCodersToken"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex-1 rounded-lg bg-gradient-to-r from-[#22242A] to-[#444654] hover:from-[#444654] hover:to-[#22242A] transition-all text-white font-semibold py-4 px-6 text-center shadow-lg flex items-center justify-center gap-2 transform hover:scale-105"
-          >
-            <Image src="/x.svg" alt="X" width={20} height={20} className="w-5 h-5 inline-block" />
-            Follow on X
-          </a>
-          <a
-            href="https://dexscreener.com/solana/B2bXGFaHDTuv7HCNEaHywuFRvVx6vkSfKEVk4k34VWkH"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex-1 rounded-lg bg-gradient-to-r from-[#FFD600] to-[#bfa600] hover:from-[#bfa600] hover:to-[#FFD600] transition-all text-black font-semibold py-4 px-6 text-center shadow-lg flex items-center justify-center gap-2 transform hover:scale-105"
-          >
-            Trade on DEX
-          </a>
-          <a
-            href="https://jup.ag/tokens/CV9oNz7rjTqCsWHHgqWhoZaaw1LSX96H81Vk5p94Hc2E"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex-1 rounded-lg bg-gradient-to-r from-[#4CAF50] to-[#388E3C] hover:from-[#388E3C] hover:to-[#4CAF50] transition-all text-white font-semibold py-4 px-6 text-center shadow-lg flex items-center justify-center gap-2 transform hover:scale-105"
-          >
-            Swap on Jupiter
-          </a>
+            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold bg-gradient-to-r from-orange-500 to-blue-500 bg-clip-text text-transparent mb-6">
+              AntCoders
+            </h1>
+
+            <p className="text-xl sm:text-2xl text-gray-600 dark:text-gray-300 max-w-4xl mx-auto mb-8 leading-relaxed">
+              🚀 Introducing <span className="font-bold text-orange-500">ANTCO</span> – The first community-driven token on Solana for developers!
+              <br />
+              Support, donate, and grow with us as we empower devs worldwide.
+            </p>
+
+            <div className="flex flex-wrap justify-center gap-2 mb-12">
+              <span className="px-4 py-2 bg-orange-100 dark:bg-orange-900 text-orange-700 dark:text-orange-300 rounded-full text-sm font-medium">
+                Zero Tax
+              </span>
+              <span className="px-4 py-2 bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300 rounded-full text-sm font-medium">
+                Fair Launch
+              </span>
+              <span className="px-4 py-2 bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-300 rounded-full text-sm font-medium">
+                Big Vision
+              </span>
+            </div>
+
+            {/* Action Buttons */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-4xl mx-auto mb-16">
+              <a
+                href="https://t.me/antcoderstoken"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex items-center justify-center gap-3 px-6 py-4 bg-[#229ED9] hover:bg-[#1a7db0] text-white rounded-xl font-semibold transition-all duration-200 transform hover:scale-105 hover:shadow-xl"
+              >
+                <Image src="/telegram.svg" alt="Telegram" width={20} height={20} />
+                Join Telegram
+                <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+              </a>
+
+              <a
+                href="https://x.com/AntCodersToken"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex items-center justify-center gap-3 px-6 py-4 bg-gray-900 hover:bg-gray-800 text-white rounded-xl font-semibold transition-all duration-200 transform hover:scale-105 hover:shadow-xl"
+              >
+                <Image src="/x.svg" alt="X" width={20} height={20} />
+                Follow on X
+                <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+              </a>
+
+              <a
+                href="https://dexscreener.com/solana/B2bXGFaHDTuv7HCNEaHywuFRvVx6vkSfKEVk4k34VWkH"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex items-center justify-center gap-3 px-6 py-4 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white rounded-xl font-semibold transition-all duration-200 transform hover:scale-105 hover:shadow-xl"
+              >
+                <TrendingUp size={20} />
+                Trade on DEX
+                <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+              </a>
+
+              <a
+                href="https://jup.ag/tokens/CV9oNz7rjTqCsWHHgqWhoZaaw1LSX96H81Vk5p94Hc2E"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex items-center justify-center gap-3 px-6 py-4 bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white rounded-xl font-semibold transition-all duration-200 transform hover:scale-105 hover:shadow-xl"
+              >
+                <RefreshCw size={20} />
+                Swap on Jupiter
+                <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+              </a>
+            </div>
+          </div>
         </div>
-        <section className="mt-8 text-center max-w-xl mx-auto flex flex-col gap-8 w-full">
-          <div className="rounded-2xl bg-white/10 border border-gray-700 shadow p-6 sm:p-8 flex flex-col gap-2 items-center">
-            <h2 className="text-xl sm:text-2xl font-bold text-[#FFD600] mb-2 flex items-center gap-2">
-              <span>Token Info</span>
+      </section>
+
+      {/* Token Info Section */}
+      <section className="px-4 py-16 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <div className="backdrop-blur-lg bg-white/10 dark:bg-gray-900/10 border border-white/20 dark:border-gray-700/20 rounded-3xl p-8 shadow-2xl">
+            <div className="flex items-center justify-between mb-8">
+              <h2 className="text-3xl font-bold text-gray-900 dark:text-white">Token Information</h2>
               <a
                 href="https://solscan.io/token/CV9oNz7rjTqCsWHHgqWhoZaaw1LSX96H81Vk5p94Hc2E"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-xs bg-[#FFD600] text-black px-2 py-1 rounded font-mono hover:underline"
+                className="px-4 py-2 bg-orange-500 hover:bg-orange-600 text-white rounded-lg font-medium transition-colors text-sm"
               >
                 View on Solscan
               </a>
-            </h2>
+            </div>
+
             {loading ? (
-              <span className="text-gray-400 text-sm">Loading token data...</span>
+              <div className="flex items-center justify-center py-12">
+                <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-orange-500"></div>
+                <span className="ml-4 text-gray-600 dark:text-gray-400">Loading token data...</span>
+              </div>
             ) : tokenData && !tokenData.error ? (
-              <>
-                <div className="flex flex-col gap-2 items-center w-full">
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full text-center">
-                    <div className="bg-gray-800/50 rounded-lg p-3">
-                      <span className="text-sm text-gray-400">Symbol</span>
-                      <p className="text-base font-semibold text-white">{tokenData.meta?.symbol || "N/A"}</p>
-                    </div>
-                    <div className="bg-gray-800/50 rounded-lg p-3">
-                      <span className="text-sm text-gray-400">Name</span>
-                      <p className="text-base font-semibold text-white">{tokenData.meta?.name || "N/A"}</p>
-                    </div>
-                    <div className="bg-gray-800/50 rounded-lg p-3">
-                      <span className="text-sm text-gray-400">Total Supply</span>
-                      <p className="text-base font-semibold text-white">
-                        {tokenData.meta?.supply ? Number(tokenData.meta.supply).toLocaleString() : "N/A"}
-                      </p>
-                    </div>
-                    <div className="bg-gray-800/50 rounded-lg p-3">
-                      <span className="text-sm text-gray-400">Holders</span>
-                      <p className="text-base font-semibold text-white">{tokenData.meta?.holderCount || "N/A"}</p>
-                    </div>
-                    <div className="bg-gray-800/50 rounded-lg p-3">
-                      <span className="text-sm text-gray-400">Price</span>
-                      <p className="text-base font-semibold text-[#19FB9B]">
-                        {tokenData.price?.priceUsdt ? `$${Number(tokenData.price.priceUsdt).toFixed(8)}` : "N/A"}
-                      </p>
-                    </div>
-                    <div className="bg-gray-800/50 rounded-lg p-3">
-                      <span className="text-sm text-gray-400">Market Cap</span>
-                      <p className="text-base font-semibold text-[#19FB9B]">
-                        {tokenData.price?.mcap ? `$${Number(tokenData.price.mcap).toLocaleString()}` : "N/A"}
-                      </p>
-                    </div>
-                    <div className="bg-gray-800/50 rounded-lg p-3">
-                      <span className="text-sm text-gray-400">FDV</span>
-                      <p className="text-base font-semibold text-white">
-                        {tokenData.price?.fdv ? `$${Number(tokenData.price.fdv).toLocaleString()}` : "N/A"}
-                      </p>
-                    </div>
-                    <div className="bg-gray-800/50 rounded-lg p-3">
-                      <span className="text-sm text-gray-400">Liquidity</span>
-                      <p className="text-base font-semibold text-white">
-                        {tokenData.price?.liquidity ? `$${Number(tokenData.price.liquidity).toLocaleString()}` : "N/A"}
-                      </p>
-                    </div>
-                  </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div className="bg-white/50 dark:bg-gray-800/50 rounded-xl p-6 text-center backdrop-blur-sm border border-white/20 dark:border-gray-700/20">
+                  <div className="text-2xl font-bold text-gray-900 dark:text-white mb-1">{tokenData.meta?.symbol || "N/A"}</div>
+                  <div className="text-sm text-gray-500 dark:text-gray-400">Symbol</div>
                 </div>
-              </>
+
+                <div className="bg-white/50 dark:bg-gray-800/50 rounded-xl p-6 text-center backdrop-blur-sm border border-white/20 dark:border-gray-700/20">
+                  <div className="text-2xl font-bold text-gray-900 dark:text-white mb-1">{tokenData.meta?.name || "N/A"}</div>
+                  <div className="text-sm text-gray-500 dark:text-gray-400">Name</div>
+                </div>
+
+                <div className="bg-white/50 dark:bg-gray-800/50 rounded-xl p-6 text-center backdrop-blur-sm border border-white/20 dark:border-gray-700/20">
+                  <div className="text-lg font-bold text-gray-900 dark:text-white mb-1">
+                    {tokenData.meta?.supply ? Number(tokenData.meta.supply).toLocaleString() : "N/A"}
+                  </div>
+                  <div className="text-sm text-gray-500 dark:text-gray-400">Total Supply</div>
+                </div>
+
+                <div className="bg-white/50 dark:bg-gray-800/50 rounded-xl p-6 text-center backdrop-blur-sm border border-white/20 dark:border-gray-700/20">
+                  <div className="text-2xl font-bold text-gray-900 dark:text-white mb-1 flex items-center justify-center gap-2">
+                    <Users size={20} />
+                    {tokenData.meta?.holderCount || "N/A"}
+                  </div>
+                  <div className="text-sm text-gray-500 dark:text-gray-400">Holders</div>
+                </div>
+
+                <div className="bg-gradient-to-r from-green-500/10 to-green-600/10 dark:from-green-400/10 dark:to-green-500/10 rounded-xl p-6 text-center backdrop-blur-sm border border-green-500/20">
+                  <div className="text-lg font-bold text-green-600 dark:text-green-400 mb-1">
+                    {tokenData.price?.priceUsdt ? `$${Number(tokenData.price.priceUsdt).toFixed(8)}` : "N/A"}
+                  </div>
+                  <div className="text-sm text-gray-500 dark:text-gray-400">Price (USD)</div>
+                </div>
+
+                <div className="bg-white/50 dark:bg-gray-800/50 rounded-xl p-6 text-center backdrop-blur-sm border border-white/20 dark:border-gray-700/20">
+                  <div className="text-lg font-bold text-gray-900 dark:text-white mb-1">
+                    {tokenData.price?.mcap ? `$${Number(tokenData.price.mcap).toLocaleString()}` : "N/A"}
+                  </div>
+                  <div className="text-sm text-gray-500 dark:text-gray-400">Market Cap</div>
+                </div>
+
+                <div className="bg-white/50 dark:bg-gray-800/50 rounded-xl p-6 text-center backdrop-blur-sm border border-white/20 dark:border-gray-700/20">
+                  <div className="text-lg font-bold text-gray-900 dark:text-white mb-1">
+                    {tokenData.price?.fdv ? `$${Number(tokenData.price.fdv).toLocaleString()}` : "N/A"}
+                  </div>
+                  <div className="text-sm text-gray-500 dark:text-gray-400">FDV</div>
+                </div>
+
+                <div className="bg-white/50 dark:bg-gray-800/50 rounded-xl p-6 text-center backdrop-blur-sm border border-white/20 dark:border-gray-700/20">
+                  <div className="text-lg font-bold text-gray-900 dark:text-white mb-1">
+                    {tokenData.price?.liquidity ? `$${Number(tokenData.price.liquidity).toLocaleString()}` : "N/A"}
+                  </div>
+                  <div className="text-sm text-gray-500 dark:text-gray-400">Liquidity</div>
+                </div>
+              </div>
             ) : (
-              <span className="text-red-400 text-sm">Could not load token data.</span>
+              <div className="text-center py-12">
+                <div className="text-red-500 dark:text-red-400 text-lg font-medium">Could not load token data</div>
+              </div>
             )}
           </div>
-          <div className="rounded-2xl bg-gradient-to-r from-[#1a1a40] via-[#0a0a23] to-[#181830] shadow p-6 sm:p-8 border border-[#222]">
-            <h2 className="text-2xl sm:text-3xl font-extrabold mb-2 text-[#FFD600] drop-shadow">Get Ready for the ANTCO Airdrop!</h2>
-            <p className="text-base sm:text-lg text-white mb-2 font-medium">Follow us to be the first to know when it drops!</p>
-            <p className="text-base sm:text-lg text-[#19FB9B] font-semibold">Big things are coming for all devs and supporters.</p>
+        </div>
+      </section>
+
+      {/* Features Section */}
+      <section className="px-4 py-16 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">Why Choose ANTCO?</h2>
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+              Built by developers, for developers. Join the future of decentralized development.
+            </p>
           </div>
 
-          {/* Add Liquidity Section */}
-          <div className="rounded-2xl bg-[#181830]/80 border border-[#19FB9B] shadow p-6 sm:p-8 flex flex-col gap-3 items-center">
-            <h2 className="text-xl sm:text-2xl font-bold text-[#19FB9B] mb-2 flex items-center gap-2">
-              <span>💧 Help Grow ANTCO: Add Liquidity!</span>
-            </h2>
-            <p className="text-base text-white text-center">
-              Support the <span className="font-semibold">ANTCO</span> ecosystem and earn fees by adding liquidity to our official Raydium pool.
-              <br />
-              Your contribution helps strengthen the community and trading experience for everyone.
-            </p>
-            <a
-              href="https://raydium.io/liquidity-pools/?token=CV9oNz7rjTqCsWHHgqWhoZaaw1LSX96H81Vk5p94Hc2E&tab=standard"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-2 inline-block rounded-full bg-[#19FB9B] hover:bg-[#13a87a] transition-colors text-black font-bold py-3 px-8 text-center shadow-lg text-lg"
-            >
-              Add Liquidity on Raydium
-            </a>
-            <span className="text-xs text-gray-400 mt-1 break-all">
-              Pool Address:
-              <br />
-              B2bXGFaHDTuv7HCNEaHywuFRvVx6vkSfKEVk4k34VWkH
-            </span>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="backdrop-blur-lg bg-white/10 dark:bg-gray-900/10 border border-white/20 dark:border-gray-700/20 rounded-2xl p-8 text-center transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 hover:scale-[1.02]">
+              <div className="w-16 h-16 bg-gradient-to-r from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                <Shield className="text-white" size={32} />
+              </div>
+              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">Zero Tax</h3>
+              <p className="text-gray-600 dark:text-gray-300">
+                No hidden fees or taxes. What you trade is what you get. Complete transparency in every transaction.
+              </p>
+            </div>
+
+            <div className="backdrop-blur-lg bg-white/10 dark:bg-gray-900/10 border border-white/20 dark:border-gray-700/20 rounded-2xl p-8 text-center transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 hover:scale-[1.02]">
+              <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                <Users className="text-white" size={32} />
+              </div>
+              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">Community Driven</h3>
+              <p className="text-gray-600 dark:text-gray-300">
+                Built by the community, for the community. Every decision is made transparently with community input.
+              </p>
+            </div>
+
+            <div className="backdrop-blur-lg bg-white/10 dark:bg-gray-900/10 border border-white/20 dark:border-gray-700/20 rounded-2xl p-8 text-center transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 hover:scale-[1.02]">
+              <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-green-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                <Zap className="text-white" size={32} />
+              </div>
+              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">Developer Focused</h3>
+              <p className="text-gray-600 dark:text-gray-300">
+                Purpose-built to support and empower developers worldwide with tools, resources, and funding.
+              </p>
+            </div>
           </div>
-          <div className="rounded-2xl bg-white/10 border border-gray-700 shadow p-6 sm:p-8">
-            <h2 className="text-2xl font-bold mb-2 text-white">Why ANTCO?</h2>
-            <p className="text-base text-gray-200">
-              ANTCO is more than just a token—it&apos;s a movement to empower developers globally. By supporting ANTCO, you&apos;re helping to build a
-              fair, transparent, and collaborative ecosystem on Solana. Join our community and help shape the future of Web3 development!
-            </p>
-          </div>
-        </section>
-      </main>
-      <div className="bg-gray-900 text-white p-6 mt-10 rounded-lg shadow-md text-center">
-        <h2 className="text-2xl font-bold mb-4">📄 Read the Whitepaper</h2>
-        <a href="/whitepaper" className="text-[#FFD600] hover:underline">
-          Click here to read the full whitepaper
-        </a>
-        <div className="flex justify-center space-x-4 mt-4">
-          <span className="bg-[#00ffa6] text-black px-4 py-2 rounded-lg">#Solana</span>
-          <span className="bg-[#ff0022] text-black px-4 py-2 rounded-lg">#ANTCO</span>
-          <span className="bg-[#189088] text-black px-4 py-2 rounded-lg">#Crypto</span>
-          <span className="bg-[#FFD600] text-black px-4 py-2 rounded-lg">#Developers</span>
-          <span className="bg-[#d09393] text-black px-4 py-2 rounded-lg">#Web3</span>
         </div>
-      </div>
-      <footer className="w-full text-center py-4 text-xs text-gray-400">
-        &copy; {new Date().getFullYear()} ANTCO – Community-driven token for developers on Solana.
+      </section>
+
+      {/* CTA Section */}
+      <section className="px-4 py-16 sm:px-6 lg:px-8">
+        <div className="max-w-4xl mx-auto">
+          <div className="backdrop-blur-lg bg-white/10 dark:bg-gray-900/10 border border-white/20 dark:border-gray-700/20 rounded-3xl p-12 text-center">
+            <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">Ready to Join the Revolution?</h2>
+            <p className="text-xl text-gray-600 dark:text-gray-300 mb-8">
+              Be part of the first community-driven token ecosystem for developers on Solana.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a
+                href="/whitepaper"
+                className="px-8 py-4 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white rounded-xl font-semibold transition-all duration-200 transform hover:scale-105 hover:shadow-xl"
+              >
+                Read Whitepaper
+              </a>
+              <a
+                href="/airdrops"
+                className="px-8 py-4 bg-white dark:bg-gray-800 text-gray-900 dark:text-white border-2 border-orange-500 hover:bg-orange-500 hover:text-white rounded-xl font-semibold transition-all duration-200 transform hover:scale-105"
+              >
+                View Airdrops
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="px-4 py-8 sm:px-6 lg:px-8 border-t border-gray-200 dark:border-gray-700">
+        <div className="max-w-7xl mx-auto text-center">
+          <p className="text-gray-600 dark:text-gray-400">
+            &copy; {new Date().getFullYear()} ANTCO – Community-driven token for developers on Solana.
+          </p>
+        </div>
       </footer>
     </div>
   );
