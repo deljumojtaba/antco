@@ -22,25 +22,27 @@ export default function HowToGetTokenPage() {
     },
     {
       number: 2,
-      title: "Buy SOL",
-      description: "Purchase SOL on a major exchange and transfer to your wallet.",
+      title: "Get SOL or USDC",
+      description: "Purchase SOL or USDC to swap for ANTCO tokens directly.",
       icon: <Download className="text-white" size={24} />,
       color: "from-blue-500 to-blue-600",
       details: [
-        "Use exchanges like Coinbase, Binance, or KuCoin",
-        "Buy SOL with your preferred payment method",
-        "Transfer SOL to your Phantom wallet address",
+        "Option 1: Buy SOL on centralized exchanges like Coinbase, Binance, or KuCoin",
+        "Option 2: Buy USDC on exchanges or use existing USDC on Solana",
+        "Both SOL and USDC can be swapped directly for ANTCO",
+        "Transfer tokens to your Phantom wallet address",
       ],
     },
     {
       number: 3,
-      title: "Swap SOL for ANTCO",
-      description: "Use Jupiter or Raydium to swap your SOL for ANTCO tokens.",
+      title: "Swap for ANTCO",
+      description: "Use Jupiter or Raydium to swap your SOL or USDC directly for ANTCO tokens.",
       icon: <ArrowRight className="text-white" size={24} />,
       color: "from-green-500 to-green-600",
       details: [
         "Connect your wallet to Jupiter or Raydium",
-        "Select SOL as input and ANTCO as output",
+        "Select SOL or USDC as input and ANTCO as output",
+        "Review the exchange rate and slippage",
         "Confirm the transaction and wait for completion",
       ],
       link: "https://jup.ag/tokens/CV9oNz7rjTqCsWHHgqWhoZaaw1LSX96H81Vk5p94Hc2E",
@@ -77,7 +79,6 @@ export default function HowToGetTokenPage() {
             Step-by-step guide to acquire ANTCO tokens and join the community-driven developer ecosystem on Solana.
           </p>
         </div>
-
         {/* Important Notice */}
         <div className="backdrop-blur-lg bg-yellow-500/10 dark:bg-yellow-400/10 border border-yellow-500/20 rounded-3xl p-6 mb-12 shadow-xl">
           <div className="flex items-start gap-4">
@@ -90,7 +91,6 @@ export default function HowToGetTokenPage() {
             </div>
           </div>
         </div>
-
         {/* Contract Address */}
         <div className="backdrop-blur-lg bg-white/10 dark:bg-gray-900/10 border border-white/20 dark:border-gray-700/20 rounded-3xl p-8 mb-12 shadow-2xl">
           <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 text-center">ANTCO Contract Address</h2>
@@ -104,7 +104,6 @@ export default function HowToGetTokenPage() {
             </button>
           </div>
         </div>
-
         {/* Step-by-Step Guide */}
         <div className="space-y-8 mb-16">
           {steps.map((step, index) => (
@@ -151,7 +150,56 @@ export default function HowToGetTokenPage() {
             </div>
           ))}
         </div>
+        {/* Alternative: Direct USDC to ANTCO */}
+        <div className="backdrop-blur-lg bg-white/10 dark:bg-gray-900/10 border border-white/20 dark:border-gray-700/20 rounded-3xl p-8 mb-12 shadow-2xl">
+          <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-6 text-center flex items-center justify-center gap-3">
+            <ArrowRight className="text-blue-500" size={32} />
+            Have USDC? Skip SOL Entirely!
+          </h2>
+          <div className="bg-gradient-to-r from-blue-500/10 to-purple-500/10 border border-blue-500/20 rounded-2xl p-6">
+            <div className="text-center mb-6">
+              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">Swap USDC Directly for ANTCO</h3>
+              <p className="text-gray-600 dark:text-gray-300">
+                You can swap USDC directly for ANTCO tokens without needing SOL. This is often more convenient and cost-effective.
+              </p>
+            </div>
 
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="bg-white/50 dark:bg-gray-800/50 rounded-xl p-6 backdrop-blur-sm border border-white/20 dark:border-gray-700/20">
+                <h4 className="font-bold text-gray-900 dark:text-white mb-3">✨ Benefits of USDC → ANTCO</h4>
+                <ul className="space-y-2 text-gray-700 dark:text-gray-300 text-sm">
+                  <li>• Skip SOL entirely - direct swap</li>
+                  <li>• USDC is widely available on exchanges</li>
+                  <li>• Stable pricing for better planning</li>
+                  <li>• Much lower transaction fees on Solana network</li>
+                  <li>• Often better liquidity and rates</li>
+                </ul>
+              </div>
+
+              <div className="bg-white/50 dark:bg-gray-800/50 rounded-xl p-6 backdrop-blur-sm border border-white/20 dark:border-gray-700/20">
+                <h4 className="font-bold text-gray-900 dark:text-white mb-3">🔄 How to Swap</h4>
+                <ul className="space-y-2 text-gray-700 dark:text-gray-300 text-sm">
+                  <li>• Connect wallet to Jupiter or Raydium</li>
+                  <li>• Select USDC as input, ANTCO as output</li>
+                  <li>• Review rate and confirm swap</li>
+                  <li>• Done! No need to buy SOL first</li>
+                </ul>
+              </div>
+            </div>
+
+            <div className="flex justify-center space-x-4 mt-6">
+              <a
+                href="https://jup.ag/swap?sell=EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v&buy=CV9oNz7rjTqCsWHHgqWhoZaaw1LSX96H81Vk5p94Hc2E"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white rounded-xl font-semibold transition-all duration-200 transform hover:scale-105"
+              >
+                Swap USDC → ANTCO on Jupiter
+                <ExternalLink size={16} />
+              </a>
+            </div>
+          </div>
+        </div>{" "}
         {/* Available Exchanges */}
         <div className="backdrop-blur-lg bg-white/10 dark:bg-gray-900/10 border border-white/20 dark:border-gray-700/20 rounded-3xl p-8 mb-12 shadow-2xl">
           <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-6 text-center">Where to Trade ANTCO</h2>
@@ -177,7 +225,6 @@ export default function HowToGetTokenPage() {
             ))}
           </div>
         </div>
-
         {/* Security Tips */}
         <div className="backdrop-blur-lg bg-white/10 dark:bg-gray-900/10 border border-white/20 dark:border-gray-700/20 rounded-3xl p-8 mb-12 shadow-2xl">
           <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-6 flex items-center gap-3">
@@ -205,7 +252,6 @@ export default function HowToGetTokenPage() {
             </div>
           </div>
         </div>
-
         {/* Call to Action */}
         <div className="backdrop-blur-lg bg-white/10 dark:bg-gray-900/10 border border-white/20 dark:border-gray-700/20 rounded-3xl p-12 text-center">
           <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">Ready to Get Started?</h2>

@@ -247,7 +247,7 @@ export default function AirdropsPage() {
                 <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
                   <Users className="text-white" size={32} />
                 </div>
-                <div className="text-3xl font-bold text-blue-600 dark:text-blue-400 mb-2">40</div>
+                <div className="text-3xl font-bold text-blue-600 dark:text-blue-400 mb-2">46</div>
                 <div className="text-gray-600 dark:text-gray-400">Participants</div>
               </div>
 
@@ -255,7 +255,7 @@ export default function AirdropsPage() {
                 <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-green-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
                   <CheckCircle className="text-white" size={32} />
                 </div>
-                <div className="text-3xl font-bold text-green-600 dark:text-green-400 mb-2">200</div>
+                <div className="text-3xl font-bold text-green-600 dark:text-green-400 mb-2">248</div>
                 <div className="text-gray-600 dark:text-gray-400">Tasks Completed</div>
               </div>
 
@@ -263,7 +263,7 @@ export default function AirdropsPage() {
                 <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
                   <TrendingUp className="text-white" size={32} />
                 </div>
-                <div className="text-3xl font-bold text-purple-600 dark:text-purple-400 mb-2">12.4M</div>
+                <div className="text-3xl font-bold text-purple-600 dark:text-purple-400 mb-2">16.8M</div>
                 <div className="text-gray-600 dark:text-gray-400">Tokens Distributed</div>
               </div>
             </div>
