@@ -13,6 +13,7 @@ export default function Navigation() {
     { href: "/how-to-get-token", label: "How to Get ANTCO" },
     { href: "/roadmap", label: "Roadmap" },
     { href: "/whitepaper", label: "Whitepaper" },
+    { href: "/tokenomics", label: "Tokenomics" },
     { href: "/airdrops", label: "Airdrops" },
   ];
 

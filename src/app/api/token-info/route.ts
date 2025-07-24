@@ -72,6 +72,7 @@ export async function GET() {
         icon: token?.icon || "N/A",
       },
       price: {
+        usd: token?.usdPrice || 0,
         priceUsdt: token?.usdPrice || "N/A",
         fdv: token?.fdv || "N/A",
         mcap: token?.mcap || "N/A",
