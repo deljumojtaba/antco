@@ -220,6 +220,164 @@ export default function ProjectsPage() {
           </div>
         </div>
 
+        {/* How AntCoders Ecosystem Works */}
+        <div className="mb-20">
+          <div className="backdrop-blur-lg bg-gradient-to-r from-purple-500/10 to-orange-500/10 dark:from-purple-400/10 dark:to-orange-400/10 border border-purple-500/20 dark:border-purple-400/20 rounded-3xl p-8 shadow-2xl">
+            <div className="text-center mb-12">
+              <div className="inline-flex items-center gap-3 mb-6">
+                <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-orange-500 rounded-2xl flex items-center justify-center">
+                  <span className="text-3xl">🚀</span>
+                </div>
+              </div>
+              <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-6">Join the AntCoders Ecosystem</h2>
+              <p className="text-xl text-gray-600 dark:text-gray-300 max-w-4xl mx-auto leading-relaxed">
+                <strong>Where Open Source Meets Real Support</strong>
+              </p>
+              <p className="text-lg text-gray-600 dark:text-gray-300 max-w-4xl mx-auto leading-relaxed mt-4">
+                Are you building an open-source project and want to gain visibility, support, and momentum? At AntCoders, we believe in the power of
+                community-driven innovation. We&apos;ve created a platform that empowers developers like you to grow your project with the help of a
+                passionate developer community.
+              </p>
+            </div>
+
+            {/* How It Works Steps */}
+            <div className="mb-12">
+              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-8 text-center flex items-center justify-center gap-3">
+                <span className="text-2xl">✅</span>
+                How It Works
+              </h3>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                {/* Step 1 */}
+                <div className="bg-white/50 dark:bg-gray-800/50 rounded-2xl p-6 backdrop-blur-sm border border-white/20 dark:border-gray-700/20">
+                  <div className="flex items-center gap-4 mb-4">
+                    <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-blue-600 rounded-xl flex items-center justify-center text-white font-bold text-lg">
+                      1
+                    </div>
+                    <h4 className="text-xl font-bold text-gray-900 dark:text-white">Submit Your Project</h4>
+                  </div>
+                  <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+                    Whether you&apos;re building an app, a library, a tool, or anything in between — if it&apos;s open source, we want to feature it.
+                    Just sign up and submit your GitHub repository or website.
+                  </p>
+                </div>
+
+                {/* Step 2 */}
+                <div className="bg-white/50 dark:bg-gray-800/50 rounded-2xl p-6 backdrop-blur-sm border border-white/20 dark:border-gray-700/20">
+                  <div className="flex items-center gap-4 mb-4">
+                    <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-green-600 rounded-xl flex items-center justify-center text-white font-bold text-lg">
+                      2
+                    </div>
+                    <h4 className="text-xl font-bold text-gray-900 dark:text-white">Get Discovered & Supported</h4>
+                  </div>
+                  <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+                    Your project will be listed and promoted for free on AntCoders — connecting you with developers, users, and potential contributors
+                    who can help your project grow.
+                  </p>
+                </div>
+
+                {/* Step 3 */}
+                <div className="bg-white/50 dark:bg-gray-800/50 rounded-2xl p-6 backdrop-blur-sm border border-white/20 dark:border-gray-700/20">
+                  <div className="flex items-center gap-4 mb-4">
+                    <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-purple-600 rounded-xl flex items-center justify-center text-white font-bold text-lg">
+                      3
+                    </div>
+                    <h4 className="text-xl font-bold text-gray-900 dark:text-white">Receive Donations</h4>
+                  </div>
+                  <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+                    Your project will also have a donation section where people who love your work can support you financially.
+                  </p>
+                </div>
+
+                {/* Step 4 */}
+                <div className="bg-white/50 dark:bg-gray-800/50 rounded-2xl p-6 backdrop-blur-sm border border-white/20 dark:border-gray-700/20">
+                  <div className="flex items-center gap-4 mb-4">
+                    <div className="w-12 h-12 bg-gradient-to-r from-orange-500 to-orange-600 rounded-xl flex items-center justify-center text-white font-bold text-lg">
+                      4
+                    </div>
+                    <h4 className="text-xl font-bold text-gray-900 dark:text-white">Enjoy Free Hosting</h4>
+                  </div>
+                  <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+                    We partner with infrastructure providers to offer free hosting and server resources to help your project stay online and scale.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Token Requirement Section */}
+            <div className="mb-8">
+              <div className="bg-gradient-to-r from-yellow-500/10 to-amber-500/10 border border-yellow-500/20 rounded-2xl p-6">
+                <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4 text-center flex items-center justify-center gap-3">
+                  <span className="text-2xl">🪙</span>
+                  Why the $1 Token Requirement?
+                </h3>
+                <p className="text-gray-700 dark:text-gray-300 mb-4 text-center">
+                  To prevent abuse and ensure community integrity, we ask all developers to:
+                </p>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                  <div className="bg-white/30 dark:bg-gray-800/30 rounded-xl p-4">
+                    <ul className="space-y-2 text-gray-700 dark:text-gray-300">
+                      <li className="flex items-center gap-3">
+                        <span className="text-blue-500 font-bold">•</span>
+                        Create a wallet
+                      </li>
+                      <li className="flex items-center gap-3">
+                        <span className="text-blue-500 font-bold">•</span>
+                        Purchase at least $1 worth of ANTCO (AntCoders Token)
+                      </li>
+                    </ul>
+                  </div>
+                  <div className="bg-white/30 dark:bg-gray-800/30 rounded-xl p-4">
+                    <p className="text-gray-700 dark:text-gray-300 mb-2 font-semibold">This small contribution:</p>
+                    <ul className="space-y-2 text-gray-700 dark:text-gray-300">
+                      <li className="flex items-center gap-3">
+                        <span className="text-green-500 font-bold">✓</span>
+                        Helps grow the ecosystem
+                      </li>
+                      <li className="flex items-center gap-3">
+                        <span className="text-green-500 font-bold">✓</span>
+                        Shows commitment
+                      </li>
+                      <li className="flex items-center gap-3">
+                        <span className="text-green-500 font-bold">✓</span>
+                        Grants access to all community benefits
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Important Note */}
+            <div className="mb-8">
+              <div className="bg-gradient-to-r from-blue-500/10 to-cyan-500/10 border border-blue-500/20 rounded-2xl p-6 text-center">
+                <div className="flex items-center justify-center gap-3 mb-4">
+                  <Shield className="text-blue-500" size={24} />
+                  <h4 className="text-xl font-bold text-gray-900 dark:text-white">Important Note</h4>
+                </div>
+                <p className="text-lg text-gray-700 dark:text-gray-300 font-semibold">📌 We do not take ownership or control of your project.</p>
+                <p className="text-gray-600 dark:text-gray-400 mt-2">
+                  Your project remains entirely yours — AntCoders makes no financial or intellectual claim on your work.
+                </p>
+              </div>
+            </div>
+
+            {/* Built by Developers */}
+            <div className="text-center">
+              <div className="bg-gradient-to-r from-purple-500/10 to-pink-500/10 border border-purple-500/20 rounded-2xl p-6">
+                <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4 flex items-center justify-center gap-3">
+                  <span className="text-2xl">🤝</span>
+                  Built by Developers, for Developers
+                </h3>
+                <p className="text-lg text-gray-700 dark:text-gray-300">
+                  Whether you&apos;re a solo hacker or a small team with big dreams, AntCoders is here to help you launch, grow, and thrive — all with
+                  the support of like-minded devs.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
         {/* Growth & Donation Benefits Section */}
         <div className="mb-20">
           <div className="backdrop-blur-lg bg-gradient-to-r from-green-500/10 to-blue-500/10 dark:from-green-400/10 dark:to-blue-400/10 border border-green-500/20 dark:border-green-400/20 rounded-3xl p-8 shadow-2xl">

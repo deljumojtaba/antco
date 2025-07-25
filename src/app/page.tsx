@@ -286,6 +286,73 @@ export default function Home() {
         </div>
       </section>
 
+      {/* How It Works Section */}
+      <section className="px-4 py-16 sm:px-6 lg:px-8 bg-gradient-to-r from-blue-500/5 to-purple-500/5 dark:from-blue-400/5 dark:to-purple-400/5">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white mb-6">
+              🚀 How AntCoders Works
+            </h2>
+            <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+              Simple steps to get your open-source project funded and supported by our developer community
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {/* Step 1 */}
+            <div className="backdrop-blur-lg bg-white/10 dark:bg-gray-900/10 border border-white/20 dark:border-gray-700/20 rounded-3xl p-6 text-center hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+              <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-4 text-white font-bold text-xl">
+                1
+              </div>
+              <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">Get $1 ANTCO</h3>
+              <p className="text-sm text-gray-600 dark:text-gray-400">
+                Create a wallet and purchase at least $1 worth of ANTCO tokens to join our ecosystem
+              </p>
+            </div>
+
+            {/* Step 2 */}
+            <div className="backdrop-blur-lg bg-white/10 dark:bg-gray-900/10 border border-white/20 dark:border-gray-700/20 rounded-3xl p-6 text-center hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+              <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-green-600 rounded-2xl flex items-center justify-center mx-auto mb-4 text-white font-bold text-xl">
+                2
+              </div>
+              <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">Submit Project</h3>
+              <p className="text-sm text-gray-600 dark:text-gray-400">
+                Submit your open-source project with GitHub repo or website for community review
+              </p>
+            </div>
+
+            {/* Step 3 */}
+            <div className="backdrop-blur-lg bg-white/10 dark:bg-gray-900/10 border border-white/20 dark:border-gray-700/20 rounded-3xl p-6 text-center hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+              <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-4 text-white font-bold text-xl">
+                3
+              </div>
+              <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">Get Featured</h3>
+              <p className="text-sm text-gray-600 dark:text-gray-400">
+                Your project gets showcased on AntCoders with free hosting and a professional domain
+              </p>
+            </div>
+
+            {/* Step 4 */}
+            <div className="backdrop-blur-lg bg-white/10 dark:bg-gray-900/10 border border-white/20 dark:border-gray-700/20 rounded-3xl p-6 text-center hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+              <div className="w-16 h-16 bg-gradient-to-r from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center mx-auto mb-4 text-white font-bold text-xl">
+                4
+              </div>
+              <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">Receive Support</h3>
+              <p className="text-sm text-gray-600 dark:text-gray-400">
+                Get donations, contributors, and community support to grow your project every day
+              </p>
+            </div>
+          </div>
+
+          <div className="text-center mt-12">
+            <div className="inline-flex items-center gap-2 bg-gradient-to-r from-green-500/10 to-blue-500/10 border border-green-500/20 rounded-full px-6 py-3">
+              <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+              <span className="text-green-600 dark:text-green-400 font-semibold">Your project remains 100% yours • No ownership claims</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Token Info Section */}
       <section className="px-4 py-16 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
