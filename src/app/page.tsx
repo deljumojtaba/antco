@@ -9,6 +9,7 @@ type TokenMeta = {
   name?: string;
   supply?: string | number;
   circSupply?: string | number;
+  burnedTokens?: string | number;
   decimals?: number;
   holderCount?: number;
   website?: string;
@@ -133,6 +134,158 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Value Proposition Section */}
+      <section className="px-4 py-16 sm:px-6 lg:px-8 bg-gradient-to-r from-orange-500/5 to-blue-500/5 dark:from-orange-400/5 dark:to-blue-400/5">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white mb-6">
+              💰 Turn Your Code Into <span className="bg-gradient-to-r from-orange-500 to-blue-500 bg-clip-text text-transparent">Funding</span>
+            </h2>
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-4xl mx-auto leading-relaxed mb-8">
+              ANTCO isn&apos;t just another token – it&apos;s the <strong>financial backbone</strong> for developers worldwide. Whether you&apos;re
+              building the next breakthrough app or contributing to open source, ANTCO connects your passion with real funding.
+            </p>
+            <div className="inline-flex items-center gap-2 bg-gradient-to-r from-green-500/10 to-green-600/10 border border-green-500/20 rounded-full px-6 py-3">
+              <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+              <span className="text-green-600 dark:text-green-400 font-semibold">Live on Solana • Zero Fees • Instant Transfers</span>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+            {/* For Developers */}
+            <div className="backdrop-blur-lg bg-white/10 dark:bg-gray-900/10 border border-white/20 dark:border-gray-700/20 rounded-3xl p-8 text-center transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 hover:scale-[1.02] group">
+              <div className="w-20 h-20 bg-gradient-to-r from-blue-500 to-blue-600 rounded-3xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
+                <span className="text-3xl">👨‍💻</span>
+              </div>
+              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">For Developers</h3>
+              <ul className="text-left space-y-3 text-gray-600 dark:text-gray-300">
+                <li className="flex items-start gap-3">
+                  <span className="text-green-500 font-bold">✓</span>
+                  <span>
+                    <strong>Get funded</strong> for your GitHub contributions
+                  </span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-green-500 font-bold">✓</span>
+                  <span>
+                    <strong>Earn ANTCO</strong> for code reviews & mentoring
+                  </span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-green-500 font-bold">✓</span>
+                  <span>
+                    <strong>Monetize</strong> your open-source projects
+                  </span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-green-500 font-bold">✓</span>
+                  <span>
+                    <strong>Build reputation</strong> with on-chain proof
+                  </span>
+                </li>
+              </ul>
+            </div>
+
+            {/* For Projects */}
+            <div className="backdrop-blur-lg bg-white/10 dark:bg-gray-900/10 border border-white/20 dark:border-gray-700/20 rounded-3xl p-8 text-center transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 hover:scale-[1.02] group">
+              <div className="w-20 h-20 bg-gradient-to-r from-orange-500 to-orange-600 rounded-3xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
+                <span className="text-3xl">🚀</span>
+              </div>
+              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">For Projects</h3>
+              <ul className="text-left space-y-3 text-gray-600 dark:text-gray-300">
+                <li className="flex items-start gap-3">
+                  <span className="text-green-500 font-bold">✓</span>
+                  <span>
+                    <strong>Crowdfund</strong> your next big idea
+                  </span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-green-500 font-bold">✓</span>
+                  <span>
+                    <strong>Reward contributors</strong> automatically
+                  </span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-green-500 font-bold">✓</span>
+                  <span>
+                    <strong>Access global talent</strong> pool
+                  </span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-green-500 font-bold">✓</span>
+                  <span>
+                    <strong>Scale faster</strong> with community support
+                  </span>
+                </li>
+              </ul>
+            </div>
+
+            {/* For Community */}
+            <div className="backdrop-blur-lg bg-white/10 dark:bg-gray-900/10 border border-white/20 dark:border-gray-700/20 rounded-3xl p-8 text-center transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 hover:scale-[1.02] group md:col-span-2 lg:col-span-1">
+              <div className="w-20 h-20 bg-gradient-to-r from-purple-500 to-purple-600 rounded-3xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
+                <span className="text-3xl">🌍</span>
+              </div>
+              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">For Community</h3>
+              <ul className="text-left space-y-3 text-gray-600 dark:text-gray-300">
+                <li className="flex items-start gap-3">
+                  <span className="text-green-500 font-bold">✓</span>
+                  <span>
+                    <strong>Support</strong> projects you believe in
+                  </span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-green-500 font-bold">✓</span>
+                  <span>
+                    <strong>Earn rewards</strong> for early adoption
+                  </span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-green-500 font-bold">✓</span>
+                  <span>
+                    <strong>Shape the future</strong> of development
+                  </span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-green-500 font-bold">✓</span>
+                  <span>
+                    <strong>Join</strong> a thriving ecosystem
+                  </span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          {/* Call to Action */}
+          <div className="text-center">
+            <div className="backdrop-blur-lg bg-gradient-to-r from-orange-500/10 to-blue-500/10 border border-orange-500/20 rounded-3xl p-8 max-w-4xl mx-auto">
+              <h3 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">🔥 Ready to Get Funded for Your Code?</h3>
+              <p className="text-lg text-gray-600 dark:text-gray-300 mb-6">
+                Join <strong>50+ developers</strong> who are already earning ANTCO tokens for their contributions. No applications, no gatekeepers –
+                just pure merit-based rewards.
+              </p>
+              <div className="flex flex-wrap justify-center gap-4">
+                <a
+                  href="/projects"
+                  className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white rounded-xl font-semibold transition-all duration-200 transform hover:scale-105 hover:shadow-xl"
+                >
+                  <span className="text-xl">🚀</span>
+                  Submit Your Project
+                  <ArrowRight size={16} />
+                </a>
+                <a
+                  href="/how-to-get-token"
+                  className="inline-flex items-center gap-2 px-8 py-4 bg-white dark:bg-gray-800 text-gray-900 dark:text-white border-2 border-orange-500 hover:bg-orange-500 hover:text-white rounded-xl font-semibold transition-all duration-200 transform hover:scale-105"
+                >
+                  <span className="text-xl">💰</span>
+                  Start Earning ANTCO
+                  <ArrowRight size={16} />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Token Info Section */}
       <section className="px-4 py-16 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
@@ -155,7 +308,7 @@ export default function Home() {
                 <span className="ml-4 text-gray-600 dark:text-gray-400">Loading token data...</span>
               </div>
             ) : tokenData && !tokenData.error ? (
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6">
                 <div className="bg-white/50 dark:bg-gray-800/50 rounded-xl p-6 text-center backdrop-blur-sm border border-white/20 dark:border-gray-700/20">
                   <div className="text-2xl font-bold text-gray-900 dark:text-white mb-1">{tokenData.meta?.symbol || "N/A"}</div>
                   <div className="text-sm text-gray-500 dark:text-gray-400">Symbol</div>
@@ -171,6 +324,13 @@ export default function Home() {
                     {tokenData.meta?.supply ? Number(tokenData.meta.supply).toLocaleString() : "N/A"}
                   </div>
                   <div className="text-sm text-gray-500 dark:text-gray-400">Total Supply</div>
+                </div>
+
+                <div className="bg-gradient-to-r from-blue-500/10 to-blue-600/10 dark:from-blue-400/10 dark:to-blue-500/10 rounded-xl p-6 text-center backdrop-blur-sm border border-blue-500/20">
+                  <div className="text-lg font-bold text-blue-600 dark:text-blue-400 mb-1">
+                    {tokenData.meta?.circSupply ? Number(tokenData.meta.circSupply).toLocaleString() : "N/A"}
+                  </div>
+                  <div className="text-sm text-gray-500 dark:text-gray-400">Circulating Supply</div>
                 </div>
 
                 <div className="bg-white/50 dark:bg-gray-800/50 rounded-xl p-6 text-center backdrop-blur-sm border border-white/20 dark:border-gray-700/20">
@@ -207,6 +367,13 @@ export default function Home() {
                     {tokenData.price?.liquidity ? `$${Number(tokenData.price.liquidity).toLocaleString()}` : "N/A"}
                   </div>
                   <div className="text-sm text-gray-500 dark:text-gray-400">Liquidity</div>
+                </div>
+
+                <div className="bg-gradient-to-r from-red-500/10 to-red-600/10 dark:from-red-400/10 dark:to-red-500/10 rounded-xl p-6 text-center backdrop-blur-sm border border-red-500/20">
+                  <div className="text-lg font-bold text-red-600 dark:text-red-400 mb-1">
+                    {tokenData.meta?.burnedTokens ? Number(tokenData.meta.burnedTokens).toLocaleString() : "0"}
+                  </div>
+                  <div className="text-sm text-gray-500 dark:text-gray-400">Burned Tokens</div>
                 </div>
               </div>
             ) : (

@@ -18,6 +18,13 @@ export async function GET() {
 
     try {
       const poolRes = await fetch(`https://api.raydium.io/v2/ammV3/ammPools`);
+
+      // Check if response is JSON
+      const contentType = poolRes.headers.get("content-type");
+      if (!contentType || !contentType.includes("application/json")) {
+        throw new Error("Raydium API returned non-JSON response");
+      }
+
       const poolData = await poolRes.json();
 
       // Find our specific pool
@@ -59,12 +66,18 @@ export async function GET() {
       }
     }
 
+    // Calculate burned tokens (Fixed Total Supply - Current Circulating Supply)
+    const fixedTotalSupply = 7770000000; // 7.77B fixed total supply
+    const circSupply = Number(token?.circSupply || 0);
+    const burnedTokens = fixedTotalSupply > circSupply ? fixedTotalSupply - circSupply : 0;
+
     return NextResponse.json({
       meta: {
         symbol: token?.symbol || "N/A",
         name: token?.name || "N/A",
-        supply: token?.totalSupply ? Number(token.totalSupply).toFixed(0) : "N/A",
+        supply: fixedTotalSupply.toFixed(0), // Use fixed total supply
         circSupply: token?.circSupply ? Number(token.circSupply).toFixed(0) : "N/A",
+        burnedTokens: burnedTokens > 0 ? burnedTokens.toFixed(0) : "0",
         lockedTokens: lockedTokens > 0 ? lockedTokens.toFixed(0) : "N/A",
         decimals: token?.decimals || "N/A",
         holderCount: token?.holderCount || "N/A",

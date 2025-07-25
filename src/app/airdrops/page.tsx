@@ -10,6 +10,7 @@ type TokenMeta = {
   name?: string;
   supply?: string | number;
   circSupply?: string | number;
+  burnedTokens?: string | number;
   lockedTokens?: string | number;
   decimals?: number;
   holderCount?: number;
@@ -324,9 +325,9 @@ export default function AirdropsPage() {
                   {loading
                     ? "Loading..."
                     : tokenData && !tokenData.error
-                    ? tokenData.meta?.circSupply
-                      ? (7770000000 - Number(tokenData.meta.circSupply)).toLocaleString()
-                      : "N/A"
+                    ? tokenData.meta?.burnedTokens
+                      ? Number(tokenData.meta.burnedTokens).toLocaleString()
+                      : "0"
                     : "N/A"}
                 </div>
                 <div className="text-sm text-gray-600 dark:text-gray-400">Permanently Removed</div>

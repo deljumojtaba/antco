@@ -14,6 +14,7 @@ export default function Navigation() {
   const navItems = [
     { href: "/", label: "Home" },
     { href: "/how-to-get-token", label: "How to Get ANTCO" },
+    { href: "/projects", label: "Projects" },
     { href: "/roadmap", label: "Roadmap" },
     { href: "/whitepaper", label: "Whitepaper" },
     { href: "/tokenomics", label: "Tokenomics" },
