@@ -6,8 +6,8 @@ services:
     restart: always
     environment:
       - NODE_ENV=production
-      - VIRTUAL_HOST=antcoders.dev
-      - LETSENCRYPT_HOST=antcoders.dev
+      - VIRTUAL_HOST=antcoders.dev,www.antcoders.dev
+      - LETSENCRYPT_HOST=antcoders.dev,www.antcoders.dev
       - LETSENCRYPT_EMAIL=antcoderstoken@gmail.com
     networks:
       - nginx-proxy
