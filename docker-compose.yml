@@ -38,10 +38,10 @@ services:
       - NGINX_PROXY_CONTAINER=nginx-proxy
     volumes:
       - /etc/nginx/certs:/etc/nginx/certs
-      - /var/run/docker.sock:/var/run/docker.sock:ro,z
+      - /etc/nginx/vhost.d:/etc/nginx/vhost.d
+      - /usr/share/nginx/html:/usr/share/nginx/html
+      - /var/run/docker.sock:/var/run/docker.sock:ro
       - /etc/acme.sh:/etc/acme.sh
-    volumes_from:
-      - nginx-proxy
     networks:
       - nginx-proxy
 
