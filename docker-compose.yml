@@ -8,7 +8,7 @@ services:
       - NODE_ENV=production
       - VIRTUAL_HOST=antcoders.dev
       - LETSENCRYPT_HOST=antcoders.dev
-      - LETSENCRYPT_EMAIL=youremail@example.com
+      - LETSENCRYPT_EMAIL=antcoderstoken@gmail.com
     networks:
       - nginx-proxy
     expose:
@@ -34,7 +34,7 @@ services:
     container_name: nginx-letsencrypt
     restart: always
     environment:
-      - DEFAULT_EMAIL=youremail@example.com
+      - DEFAULT_EMAIL=antcoderstoken@gmail.com
     volumes:
       - /etc/nginx/certs
       - /var/run/docker.sock:/tmp/docker.sock:ro
