@@ -6,15 +6,43 @@ services:
     restart: always
     environment:
       - NODE_ENV=production
+      - VIRTUAL_HOST=antcoders.dev
+      - LETSENCRYPT_HOST=antcoders.dev
+      - LETSENCRYPT_EMAIL=youremail@example.com
+    networks:
+      - nginx-proxy
+    expose:
+      - "3000"  # internal port, not published to host
+
+  nginx-proxy:
+    image: jwilder/nginx-proxy
+    container_name: nginx-proxy
+    restart: always
     ports:
-      - "3000:3000"
-  # nginx:
-  #   image: nginx:alpine
-  #   container_name: antcoders-nginx
-  #   restart: always
-  #   depends_on:
-  #     - nextjs
-  #   ports:
-  #     - "80:80"
-  #   volumes:
-  #     - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
+      - "80:80"
+      - "443:443"
+    volumes:
+      - /etc/nginx/certs
+      - /etc/nginx/vhost.d
+      - /usr/share/nginx/html
+      - /var/run/docker.sock:/tmp/docker.sock:ro
+    networks:
+      - nginx-proxy
+
+  letsencrypt:
+    image: jrcs/letsencrypt-nginx-proxy-companion
+    container_name: nginx-letsencrypt
+    restart: always
+    environment:
+      - DEFAULT_EMAIL=youremail@example.com
+    volumes:
+      - /etc/nginx/certs
+      - /var/run/docker.sock:/tmp/docker.sock:ro
+    volumes_from:
+      - nginx-proxy
+    networks:
+      - nginx-proxy
+
+networks:
+  nginx-proxy:
+    external: true
