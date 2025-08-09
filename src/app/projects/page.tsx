@@ -133,6 +133,18 @@ export default function ProjectsPage() {
   const placeholderProjects = [
     {
       id: 1,
+      title: "Solana Trading Bot",
+      description:
+        "A sophisticated trading bot for Solana tokens with secure web dashboard interface. Generate natural trading activity with configurable strategies and real-time monitoring.",
+      status: "Live",
+      category: "Trading",
+      developer: "AntCoders Team",
+      url: "https://solana-trading-bot.antcoders.dev/",
+      slug: "solana-trading-bot",
+      featured: true,
+    },
+    {
+      id: 2,
       title: "DeFi Analytics Dashboard",
       description: "Real-time cryptocurrency analytics and portfolio tracking tool built with React and Web3 integration.",
       status: "Coming Soon",
@@ -140,7 +152,7 @@ export default function ProjectsPage() {
       developer: "Anonymous Dev",
     },
     {
-      id: 2,
+      id: 3,
       title: "NFT Marketplace Builder",
       description: "No-code solution for creating custom NFT marketplaces on Solana blockchain.",
       status: "Coming Soon",
@@ -148,7 +160,7 @@ export default function ProjectsPage() {
       developer: "Anonymous Creator",
     },
     {
-      id: 3,
+      id: 4,
       title: "Smart Contract Auditor",
       description: "Automated security analysis tool for Solana smart contracts with detailed vulnerability reports.",
       status: "Coming Soon",
@@ -712,37 +724,89 @@ export default function ProjectsPage() {
           </div>
         </div>
 
-        {/* Future Projects Section */}
+        {/* Projects Section */}
         <div className="mb-20">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">Projects Powered by ANTCO</h2>
-            <p className="text-lg text-gray-600 dark:text-gray-300">Coming Soon - Be the first to showcase your project!</p>
+            <p className="text-lg text-gray-600 dark:text-gray-300">
+              Discover innovative projects built by our community - featuring live trading bots and more!
+            </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
             {placeholderProjects.map((project) => (
               <div
                 key={project.id}
-                className="backdrop-blur-lg bg-white/10 dark:bg-gray-900/10 border border-white/20 dark:border-gray-700/20 rounded-3xl p-6 shadow-2xl opacity-60"
+                className={`relative backdrop-blur-lg bg-white/10 dark:bg-gray-900/10 border border-white/20 dark:border-gray-700/20 rounded-3xl p-6 shadow-2xl transition-all duration-300 hover:shadow-xl hover:-translate-y-2 ${
+                  project.status === "Coming Soon" ? "opacity-60" : "opacity-100"
+                } ${project.featured ? "ring-2 ring-orange-500/30" : ""}`}
               >
+                {project.featured && (
+                  <div className="absolute -top-3 -right-3 bg-gradient-to-r from-orange-500 to-orange-600 text-white text-xs font-bold px-3 py-1 rounded-full">
+                    ⭐ Featured
+                  </div>
+                )}
+
                 <div className="flex items-center justify-between mb-4">
-                  <span className="bg-gradient-to-r from-orange-500/10 to-orange-600/10 border border-orange-500/20 rounded-full px-3 py-1 text-sm text-orange-600 dark:text-orange-400 font-medium">
+                  <span
+                    className={`rounded-full px-3 py-1 text-sm font-medium ${
+                      project.category === "Trading"
+                        ? "bg-gradient-to-r from-green-500/10 to-green-600/10 border border-green-500/20 text-green-600 dark:text-green-400"
+                        : "bg-gradient-to-r from-orange-500/10 to-orange-600/10 border border-orange-500/20 text-orange-600 dark:text-orange-400"
+                    }`}
+                  >
                     {project.category}
                   </span>
-                  <span className="text-xs text-gray-500 dark:text-gray-400 bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded">{project.status}</span>
+                  <span
+                    className={`text-xs px-2 py-1 rounded ${
+                      project.status === "Live"
+                        ? "bg-green-500/20 text-green-600 dark:text-green-400 border border-green-500/30"
+                        : "text-gray-500 dark:text-gray-400 bg-gray-100 dark:bg-gray-700"
+                    }`}
+                  >
+                    {project.status}
+                  </span>
                 </div>
 
                 <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">{project.title}</h3>
 
                 <p className="text-gray-700 dark:text-gray-300 text-sm mb-4 leading-relaxed">{project.description}</p>
 
-                <div className="flex items-center justify-between">
+                <div className="flex items-center justify-between mb-4">
                   <span className="text-sm text-gray-600 dark:text-gray-400">by {project.developer}</span>
-                  <div className="flex items-center gap-2">
-                    <Github size={16} className="text-gray-400" />
-                    <ExternalLink size={16} className="text-gray-400" />
-                  </div>
+                  {project.status === "Live" && (
+                    <div className="flex items-center gap-2">
+                      <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                      <span className="text-xs text-green-600 dark:text-green-400 font-semibold">Online</span>
+                    </div>
+                  )}
                 </div>
+
+                {project.status === "Live" ? (
+                  <div className="flex gap-3">
+                    <Link
+                      href={`/projects/${project.slug}`}
+                      className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white rounded-xl font-semibold transition-all duration-200 transform hover:scale-105 text-sm"
+                    >
+                      <FileText size={14} />
+                      Details
+                    </Link>
+                    <a
+                      href={project.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white rounded-xl font-semibold transition-all duration-200 transform hover:scale-105 text-sm"
+                    >
+                      <ExternalLink size={14} />
+                      Visit
+                    </a>
+                  </div>
+                ) : (
+                  <div className="flex items-center justify-center gap-2 px-4 py-2 bg-gray-500/20 text-gray-500 dark:text-gray-400 rounded-xl text-sm">
+                    <Github size={14} className="opacity-50" />
+                    <span>Coming Soon</span>
+                  </div>
+                )}
               </div>
             ))}
           </div>

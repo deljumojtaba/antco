@@ -290,9 +290,7 @@ export default function Home() {
       <section className="px-4 py-16 sm:px-6 lg:px-8 bg-gradient-to-r from-blue-500/5 to-purple-500/5 dark:from-blue-400/5 dark:to-purple-400/5">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white mb-6">
-              🚀 How AntCoders Works
-            </h2>
+            <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white mb-6">🚀 How AntCoders Works</h2>
             <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
               Simple steps to get your open-source project funded and supported by our developer community
             </p>
@@ -448,6 +446,167 @@ export default function Home() {
                 <div className="text-red-500 dark:text-red-400 text-lg font-medium">Could not load token data</div>
               </div>
             )}
+          </div>
+        </div>
+      </section>
+
+      {/* Featured Projects Carousel */}
+      <section className="px-4 py-16 sm:px-6 lg:px-8 bg-gradient-to-r from-purple-500/5 to-orange-500/5 dark:from-purple-400/5 dark:to-orange-400/5">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">🚀 Featured Projects</h2>
+            <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+              Discover innovative projects built by our developer community
+            </p>
+          </div>
+
+          {/* Projects Carousel */}
+          <div className="relative overflow-hidden">
+            <div className="flex gap-6 overflow-x-auto scrollbar-hide pb-4" style={{ scrollSnapType: "x mandatory" }}>
+              {/* Solana Trading Bot */}
+              <div
+                className="flex-shrink-0 w-80 backdrop-blur-lg bg-white/10 dark:bg-gray-900/10 border border-white/20 dark:border-gray-700/20 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+                style={{ scrollSnapAlign: "start" }}
+              >
+                <div className="flex items-center justify-between mb-4">
+                  <span className="bg-gradient-to-r from-green-500/10 to-green-600/10 border border-green-500/20 text-green-600 dark:text-green-400 rounded-full px-3 py-1 text-sm font-medium">
+                    Trading
+                  </span>
+                  <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                    <span className="text-xs text-green-600 dark:text-green-400 font-semibold">Live</span>
+                  </div>
+                </div>
+
+                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">Solana Trading Bot</h3>
+                <p className="text-gray-700 dark:text-gray-300 text-sm mb-4 leading-relaxed">
+                  Sophisticated trading bot for Solana tokens with secure web dashboard and configurable strategies.
+                </p>
+
+                <div className="flex items-center justify-between mb-4">
+                  <span className="text-sm text-gray-600 dark:text-gray-400">by AntCoders Team</span>
+                  <div className="bg-gradient-to-r from-orange-500/10 to-orange-600/10 border border-orange-500/20 text-orange-600 dark:text-orange-400 rounded-full px-2 py-1 text-xs font-bold">
+                    ⭐ Featured
+                  </div>
+                </div>
+
+                <div className="flex gap-2">
+                  <a
+                    href="/projects/solana-trading-bot"
+                    className="flex-1 inline-flex items-center justify-center gap-2 px-3 py-2 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white rounded-lg font-semibold transition-all duration-200 transform hover:scale-105 text-sm"
+                  >
+                    <ArrowRight size={14} />
+                    View Details
+                  </a>
+                  <a
+                    href="https://solana-trading-bot.antcoders.dev/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-1 inline-flex items-center justify-center gap-2 px-3 py-2 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white rounded-lg font-semibold transition-all duration-200 transform hover:scale-105 text-sm"
+                  >
+                    <TrendingUp size={14} />
+                    Try Live
+                  </a>
+                </div>
+              </div>
+
+              {/* Coming Soon Projects */}
+              <div
+                className="flex-shrink-0 w-80 backdrop-blur-lg bg-white/10 dark:bg-gray-900/10 border border-white/20 dark:border-gray-700/20 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 opacity-75"
+                style={{ scrollSnapAlign: "start" }}
+              >
+                <div className="flex items-center justify-between mb-4">
+                  <span className="bg-gradient-to-r from-blue-500/10 to-blue-600/10 border border-blue-500/20 text-blue-600 dark:text-blue-400 rounded-full px-3 py-1 text-sm font-medium">
+                    DeFi
+                  </span>
+                  <span className="text-gray-500 dark:text-gray-400 bg-gray-100 dark:bg-gray-700 rounded px-2 py-1 text-xs">Coming Soon</span>
+                </div>
+
+                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">DeFi Analytics Dashboard</h3>
+                <p className="text-gray-700 dark:text-gray-300 text-sm mb-4 leading-relaxed">
+                  Real-time cryptocurrency analytics and portfolio tracking tool with Web3 integration.
+                </p>
+
+                <div className="flex items-center justify-between mb-4">
+                  <span className="text-sm text-gray-600 dark:text-gray-400">by Anonymous Dev</span>
+                </div>
+
+                <div className="flex justify-center">
+                  <div className="inline-flex items-center gap-2 px-4 py-2 bg-gray-500/20 text-gray-500 dark:text-gray-400 rounded-lg text-sm">
+                    <Zap size={14} className="opacity-50" />
+                    <span>In Development</span>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                className="flex-shrink-0 w-80 backdrop-blur-lg bg-white/10 dark:bg-gray-900/10 border border-white/20 dark:border-gray-700/20 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 opacity-75"
+                style={{ scrollSnapAlign: "start" }}
+              >
+                <div className="flex items-center justify-between mb-4">
+                  <span className="bg-gradient-to-r from-purple-500/10 to-purple-600/10 border border-purple-500/20 text-purple-600 dark:text-purple-400 rounded-full px-3 py-1 text-sm font-medium">
+                    NFT
+                  </span>
+                  <span className="text-gray-500 dark:text-gray-400 bg-gray-100 dark:bg-gray-700 rounded px-2 py-1 text-xs">Coming Soon</span>
+                </div>
+
+                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">NFT Marketplace Builder</h3>
+                <p className="text-gray-700 dark:text-gray-300 text-sm mb-4 leading-relaxed">
+                  No-code solution for creating custom NFT marketplaces on Solana blockchain.
+                </p>
+
+                <div className="flex items-center justify-between mb-4">
+                  <span className="text-sm text-gray-600 dark:text-gray-400">by Anonymous Creator</span>
+                </div>
+
+                <div className="flex justify-center">
+                  <div className="inline-flex items-center gap-2 px-4 py-2 bg-gray-500/20 text-gray-500 dark:text-gray-400 rounded-lg text-sm">
+                    <Shield size={14} className="opacity-50" />
+                    <span>In Development</span>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                className="flex-shrink-0 w-80 backdrop-blur-lg bg-white/10 dark:bg-gray-900/10 border border-white/20 dark:border-gray-700/20 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 opacity-75"
+                style={{ scrollSnapAlign: "start" }}
+              >
+                <div className="flex items-center justify-between mb-4">
+                  <span className="bg-gradient-to-r from-red-500/10 to-red-600/10 border border-red-500/20 text-red-600 dark:text-red-400 rounded-full px-3 py-1 text-sm font-medium">
+                    Security
+                  </span>
+                  <span className="text-gray-500 dark:text-gray-400 bg-gray-100 dark:bg-gray-700 rounded px-2 py-1 text-xs">Coming Soon</span>
+                </div>
+
+                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">Smart Contract Auditor</h3>
+                <p className="text-gray-700 dark:text-gray-300 text-sm mb-4 leading-relaxed">
+                  Automated security analysis tool for Solana smart contracts with detailed reports.
+                </p>
+
+                <div className="flex items-center justify-between mb-4">
+                  <span className="text-sm text-gray-600 dark:text-gray-400">by Security Expert</span>
+                </div>
+
+                <div className="flex justify-center">
+                  <div className="inline-flex items-center gap-2 px-4 py-2 bg-gray-500/20 text-gray-500 dark:text-gray-400 rounded-lg text-sm">
+                    <Users size={14} className="opacity-50" />
+                    <span>In Development</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* View All Projects CTA */}
+          <div className="text-center mt-8">
+            <a
+              href="/projects"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white rounded-xl font-semibold transition-all duration-200 transform hover:scale-105 hover:shadow-xl"
+            >
+              <span className="text-lg">🚀</span>
+              View All Projects
+              <ArrowRight size={16} />
+            </a>
           </div>
         </div>
       </section>
