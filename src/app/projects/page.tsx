@@ -144,6 +144,17 @@ export default function ProjectsPage() {
       featured: true,
     },
     {
+      id: 5,
+      title: "AntLog",
+      description: "AntLog — a simple, installable trading journal that helps you record trades, track performance, and improve over time.",
+      status: "Live",
+      category: "Tool",
+      developer: "AntLog Team",
+      url: "https://antlog.app",
+      slug: "antlog",
+      featured: false,
+    },
+    {
       id: 2,
       title: "DeFi Analytics Dashboard",
       description: "Real-time cryptocurrency analytics and portfolio tracking tool built with React and Web3 integration.",

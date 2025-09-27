@@ -511,6 +511,49 @@ export default function Home() {
               </div>
 
               {/* Coming Soon Projects */}
+              {/* AntLog Project */}
+              <div
+                className="flex-shrink-0 w-80 backdrop-blur-lg bg-white/10 dark:bg-gray-900/10 border border-white/20 dark:border-gray-700/20 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+                style={{ scrollSnapAlign: "start" }}
+              >
+                <div className="flex items-center justify-between mb-4">
+                  <span className="bg-gradient-to-r from-indigo-500/10 to-indigo-600/10 border border-indigo-500/20 text-indigo-600 dark:text-indigo-400 rounded-full px-3 py-1 text-sm font-medium">
+                    Tool
+                  </span>
+                  <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                    <span className="text-xs text-green-600 dark:text-green-400 font-semibold">Live</span>
+                  </div>
+                </div>
+
+                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">AntLog</h3>
+                <p className="text-gray-700 dark:text-gray-300 text-sm mb-4 leading-relaxed">
+                  AntLog — a simple, installable trading journal that helps you record trades, track performance, and improve over time.
+                </p>
+
+                <div className="flex items-center justify-between mb-4">
+                  <span className="text-sm text-gray-600 dark:text-gray-400">by AntLog Team</span>
+                </div>
+
+                <div className="flex gap-2">
+                  <a
+                    href="/projects/antlog"
+                    className="flex-1 inline-flex items-center justify-center gap-2 px-3 py-2 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white rounded-lg font-semibold transition-all duration-200 transform hover:scale-105 text-sm"
+                  >
+                    <ArrowRight size={14} />
+                    View Details
+                  </a>
+                  <a
+                    href="https://antlog.app"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-1 inline-flex items-center justify-center gap-2 px-3 py-2 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white rounded-lg font-semibold transition-all duration-200 transform hover:scale-105 text-sm"
+                  >
+                    <TrendingUp size={14} />
+                    Visit
+                  </a>
+                </div>
+              </div>
               <div
                 className="flex-shrink-0 w-80 backdrop-blur-lg bg-white/10 dark:bg-gray-900/10 border border-white/20 dark:border-gray-700/20 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 opacity-75"
                 style={{ scrollSnapAlign: "start" }}
