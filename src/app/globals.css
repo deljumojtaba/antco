@@ -144,6 +144,10 @@ body {
   animation: glow 2s ease-in-out infinite alternate;
 }
 
+.animate-spin-slow {
+  animation: spin-slow 8s linear infinite;
+}
+
 @keyframes float {
   0%,
   100% {
@@ -160,5 +164,14 @@ body {
   }
   to {
     box-shadow: 0 0 30px rgba(249, 115, 22, 0.8);
+  }
+}
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
   }
 }
