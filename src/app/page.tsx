@@ -101,7 +101,7 @@ export default function Home() {
                 href="https://x.com/AntCodersToken"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex items-center justify-center gap-3 px-6 py-4 bg-gray-900 hover:bg-gray-800 text-white rounded-xl font-semibold transition-all duration-200 transform hover:scale-105 hover:shadow-xl"
+                className="group flex items-center justify-center gap-3 px-6 py-4 bg-gray-900 text-white rounded-xl font-semibold transition-all duration-200 transform hover:scale-105 hover:shadow-xl"
               >
                 <Image src="/x.svg" alt="X" width={20} height={20} />
                 Follow on X
@@ -112,7 +112,7 @@ export default function Home() {
                 href="https://dexscreener.com/solana/B2bXGFaHDTuv7HCNEaHywuFRvVx6vkSfKEVk4k34VWkH"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex items-center justify-center gap-3 px-6 py-4 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white rounded-xl font-semibold transition-all duration-200 transform hover:scale-105 hover:shadow-xl"
+                className="group flex items-center justify-center gap-3 px-6 py-4 bg-gradient-to-r from-orange-500 to-orange-600 text-white rounded-xl font-semibold transition-all duration-200 transform hover:scale-105 hover:shadow-xl"
               >
                 <TrendingUp size={20} />
                 Trade on DEX
@@ -123,7 +123,7 @@ export default function Home() {
                 href="https://jup.ag/tokens/CV9oNz7rjTqCsWHHgqWhoZaaw1LSX96H81Vk5p94Hc2E"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex items-center justify-center gap-3 px-6 py-4 bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white rounded-xl font-semibold transition-all duration-200 transform hover:scale-105 hover:shadow-xl"
+                className="group flex items-center justify-center gap-3 px-6 py-4 bg-gradient-to-r from-green-500 to-green-600 text-white rounded-xl font-semibold transition-all duration-200 transform hover:scale-105 hover:shadow-xl"
               >
                 <RefreshCw size={20} />
                 Swap on Jupiter
@@ -266,7 +266,7 @@ export default function Home() {
               <div className="flex flex-wrap justify-center gap-4">
                 <a
                   href="/projects"
-                  className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white rounded-xl font-semibold transition-all duration-200 transform hover:scale-105 hover:shadow-xl"
+                  className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-orange-500 to-orange-600 text-white rounded-xl font-semibold transition-all duration-200 transform hover:scale-105 hover:shadow-xl"
                 >
                   <span className="text-xl">🚀</span>
                   Submit Your Project
@@ -274,7 +274,7 @@ export default function Home() {
                 </a>
                 <a
                   href="/how-to-get-token"
-                  className="inline-flex items-center gap-2 px-8 py-4 bg-white dark:bg-gray-800 text-gray-900 dark:text-white border-2 border-orange-500 hover:bg-orange-500 hover:text-white rounded-xl font-semibold transition-all duration-200 transform hover:scale-105"
+                  className="inline-flex items-center gap-2 px-8 py-4 bg-white dark:bg-gray-800 text-gray-900 dark:text-white border-2 border-orange-500 rounded-xl font-semibold transition-all duration-200 transform hover:scale-105"
                 >
                   <span className="text-xl">💰</span>
                   Start Earning ANTCO
@@ -551,6 +551,53 @@ export default function Home() {
                   >
                     <TrendingUp size={14} />
                     Visit
+                  </a>
+                </div>
+              </div>
+
+              {/* AntCoders Puzzle Game */}
+              <div
+                className="flex-shrink-0 w-80 backdrop-blur-lg bg-white/10 dark:bg-gray-900/10 border border-white/20 dark:border-gray-700/20 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+                style={{ scrollSnapAlign: "start" }}
+              >
+                <div className="flex items-center justify-between mb-4">
+                  <span className="bg-gradient-to-r from-purple-500/10 to-purple-600/10 border border-purple-500/20 text-purple-600 dark:text-purple-400 rounded-full px-3 py-1 text-sm font-medium">
+                    Game
+                  </span>
+                  <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                    <span className="text-xs text-green-600 dark:text-green-400 font-semibold">Live</span>
+                  </div>
+                </div>
+
+                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">AntCoders Puzzle</h3>
+                <p className="text-gray-700 dark:text-gray-300 text-sm mb-4 leading-relaxed">
+                  A classic sliding puzzle game with a modern twist. Challenge yourself with various board sizes and earn rewards.
+                </p>
+
+                <div className="flex items-center justify-between mb-4">
+                  <span className="text-sm text-gray-600 dark:text-gray-400">by AntCoders Team</span>
+                  <div className="bg-gradient-to-r from-orange-500/10 to-orange-600/10 border border-orange-500/20 text-orange-600 dark:text-orange-400 rounded-full px-2 py-1 text-xs font-bold">
+                    ⭐ Featured
+                  </div>
+                </div>
+
+                <div className="flex gap-2">
+                  <a
+                    href="/projects/antcoders-puzzle"
+                    className="flex-1 inline-flex items-center justify-center gap-2 px-3 py-2 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white rounded-lg font-semibold transition-all duration-200 transform hover:scale-105 text-sm"
+                  >
+                    <ArrowRight size={14} />
+                    View Details
+                  </a>
+                  <a
+                    href="https://puzzle.antcoders.dev"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-1 inline-flex items-center justify-center gap-2 px-3 py-2 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white rounded-lg font-semibold transition-all duration-200 transform hover:scale-105 text-sm"
+                  >
+                    <TrendingUp size={14} />
+                    Play Now
                   </a>
                 </div>
               </div>
