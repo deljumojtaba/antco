@@ -144,6 +144,18 @@ export default function ProjectsPage() {
       featured: true,
     },
     {
+      id: 6,
+      title: "AntCoders Puzzle",
+      description:
+        "A classic sliding puzzle game with a modern twist. Challenge yourself with various board sizes, track your stats, and compete for the best scores.",
+      status: "Live",
+      category: "Game",
+      developer: "AntCoders Team",
+      url: "https://puzzle.antcoders.dev",
+      slug: "antcoders-puzzle",
+      featured: true,
+    },
+    {
       id: 5,
       title: "AntLog",
       description: "AntLog — a simple, installable trading journal that helps you record trades, track performance, and improve over time.",
